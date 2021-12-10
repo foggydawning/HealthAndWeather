@@ -1,0 +1,111 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-size: 100%;
+    
+}
+input {
+    width: 363.25px;
+    height: 58.6px;
+    color: rgba(44, 69, 99, 0.47);
+    font-size: 14px;
+    line-height: 16px;
+    filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.25));
+    border-radius: 25px;
+    border: 2px linear-gradient(314.65deg, #6CBFD1 -0.61%, #83D1E2 23.49%, rgba(145, 219, 235, 0.87) 47.6%, #9DE1F0 76.94%, #A2E1EF 100%);;
+    padding-left: 25px;
+}
+
+main {
+    background: rgba(255, 255, 255, 1);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* Задний фон */
+    background-image: url("./background.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    
+}
+.register-form-container {
+
+    position: relative;
+    z-index: 2;
+    max-width: 475px;
+    width: 100%;
+    background: rgba(242, 250, 255, 0.9);
+    border: 9px solid #5B93A9;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 35px;
+    padding-left: 30px; /* check padding */
+    padding-right: 30px;
+    padding-top: 38px;
+    padding-bottom: 38px;
+}
+
+.form-title {
+    text-align: center;
+    color: linear-gradient(314.65deg, #6CBFD1 -0.61%, #83D1E2 23.49%, rgba(145, 219, 235, 0.87) 47.6%, #9DE1F0 76.94%, #A2E1EF 100%);
+    font-weight: bold;
+    font-style: normal;
+    border: 1px solid #6CBFD1;
+    box-sizing: border-box;
+    font-size: 35px;
+    line-height: 39px;
+    margin-bottom: 38px;
+    
+
+    /*Не работает цветовое заполнение*/
+    
+}
+
+.form-field {
+    margin-bottom: 16px;
+    align-items: center;
+    border: 5px solid;
+    border-image-source: linear-gradient(314.65deg, #6B53B0 -0.61%, #8E77D0 23.49%, rgba(175, 154, 236, 0.87) 47.6%, #C2B0F5 76.94%, #E3D9FF 100%);
+    width: 363.25px;
+    height: 58.6px;
+    left: calc(50% - 363.25px/2 - 0.87px);
+    top: calc(50% - 58.6px/2 - 144.7px);
+    filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.25));
+    border-radius: 25px;
+    /*Не работает цветовое заполнение рамки*/
+
+
+}
+.button {
+    display:block;
+    height: 60px;
+    background: linear-gradient(314.65deg, #6CBFD1 -0.61%, #83D1E2 23.49%, rgba(145, 219, 235, 0.87) 47.6%, #9DE1F0 76.94%, #A2E1EF 100%);
+    border-radius: 30px;
+    color:#fff;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 45px;
+}
+.button:hover {
+    background-color:linear-gradient(314.65deg, #6CBFD1 -0.61%, #83D1E2 23.49%, rgba(145, 219, 235, 0.87) 47.6%, #9DE1F0 76.94%, #A2E1EF 100%);
+    
+}
+a.button{
+    text-decoration: none;
+}
+/* input img .button-facebook{
+
+}  где найти сам font (google нема)*/
+
+.divider {
+    text-align: center;
+    color: #5B93A9;
+}
