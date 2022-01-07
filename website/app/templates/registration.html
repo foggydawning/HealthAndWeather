@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel = "stylesheet" href = "style.css"></link>
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/registration_page.css') }}">
         <title>Регистрация</title>
     </head>
 
@@ -24,9 +24,9 @@
             <div class = "divider">или зарегистрируйтесь через</div>
             <table class="register-form-fast-registration-table">
                 <tr>
-                    <td> <input type="image" src="../images/facebook-icon.png" alt=""> </td>
-                    <td> <input type="image" src="../images/google-icon.png" alt=""> </td>
-                    <td> <input type="image" src="../images/vk-icon.png" alt=""> </td>
+                    <td> <input type="image" src="{{ url_for('static',filename='images/facebook-icon.png') }}" alt=""> </td>
+                    <td> <input type="image" src="{{ url_for('static',filename='images/google-icon.png') }}" alt=""> </td>
+                    <td> <input type="image" src="{{ url_for('static',filename='images/vk-icon.png') }}" alt=""> </td>
                 </tr>
             </table>
         </div>
