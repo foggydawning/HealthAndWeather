@@ -13,15 +13,37 @@
                 Зарегистрируйтесь
             </h1>
 
-            <div class="register-form-textfields"> 
-                <input type="text" placeholder="Введите адрес электронной почты">
-                <input type="text" placeholder="Пароль">
-                <input type="text" placeholder="Повторите пароль">
-            </div>
+            <form action="" method="post" novalidate>
+                <div class="register-form-textfields">
+                    {{ form.hidden_tag() }}
+                    <p>
+                        {% for error in form.email.errors %}
+                            <span class="error-string"> {{ error }}</span>
+                        {% endfor %}
+                        {{ form.email() }}
+                    </p>
+                    
+                    <p>
+                        {% for error in form.password.errors %}
+                            <span class="error-string"> {{ error }}</span>
+                        {% endfor %}
+                        {{ form.password() }}
+                    </p>
+                    
+                    <p>
+                        {% for error in form.repeat_password.errors %}
+                            <span class="error-string"> {{ error }}</span>
+                        {% endfor %}
+                        {{ form.repeat_password() }}
+                    </p>
+                    
+                </div>
+
+                {{ form.submit(class_="button") }}
+                
+            </form>
             
-            
-            <button class = "button">Зарегистрироваться</button>
-            <div class = "divider">или зарегистрируйтесь через</div>
+            <div class = "divider"> или зарегистрируйтесь через </div>
             <table class="register-form-fast-registration-table">
                 <tr>
                     <td> <input type="image" src="{{ url_for('static',filename='images/facebook-icon.png') }}" alt=""> </td>
