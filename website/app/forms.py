@@ -17,5 +17,4 @@ class RegistrationForm(FlaskForm):
     )
 
 
-    submit = SubmitField('Зарегистрироваться')
-    
+    submit = SubmitField('Войти')
