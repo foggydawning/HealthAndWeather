@@ -130,6 +130,15 @@ body {
     margin-top: 20px;
 }
 
+.button:hover{
+    background: #8E77D0;
+}
+
+button:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px #cbd6ee;
+}
+
 .register-form-fast-registration-table {
     margin: auto;
     text-align: center;
