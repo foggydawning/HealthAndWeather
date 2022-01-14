@@ -3,16 +3,36 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+<<<<<<< HEAD:website/app/templates/login_page.html
+        <link rel = "stylesheet" href = "style.css"></link>
+        <title>Вход</title>
+=======
         <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/registration_page.css') }}">
         <title>Регистрация</title>
+>>>>>>> main:website/app/templates/registration.html
     </head>
 
     <body>
         <div class="register-form-container">
             <h1 class = "registration-form-title">
-                Зарегистрируйтесь
+                Войдите
             </h1>
 
+<<<<<<< HEAD:website/app/templates/login_page.html
+            <div class="register-form-textfields"> 
+                <input type="text" placeholder="Введите адрес электронной почты">
+                <input type="text" placeholder="Пароль">
+            </div>
+            
+            
+            <button class = "button">Войти</button>
+            <div class = "divider">или войдите через</div>
+            <table class="register-form-fast-registration-table">
+                <tr>
+                    <td> <input type="image" src="../images/facebook-icon.png" alt=""> </td> 
+                    <td> <input type="image" src="../images/google-icon.png" alt=""> </td>
+                    <td> <input type="image" src="../images/vk-icon.png" alt=""> </td>
+=======
             <form action="" method="post" novalidate>
                 <div class="register-form-textfields">
                     {{ form.hidden_tag() }}
@@ -49,6 +69,7 @@
                     <td> <input type="image" src="{{ url_for('static',filename='images/facebook-icon.png') }}" alt=""> </td>
                     <td> <input type="image" src="{{ url_for('static',filename='images/google-icon.png') }}" alt=""> </td>
                     <td> <input type="image" src="{{ url_for('static',filename='images/vk-icon.png') }}" alt=""> </td>
+>>>>>>> main:website/app/templates/registration.html
                 </tr>
             </table>
         </div>
