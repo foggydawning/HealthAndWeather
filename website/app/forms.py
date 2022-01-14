@@ -15,6 +15,12 @@ class RegistrationForm(FlaskForm):
         render_kw={"placeholder": "Введите пароль"},
         validators=[DataRequired()]
     )
+    
+    repeat_password = PasswordField(
+        'Password',
+        render_kw={"placeholder": "Повторите пароль"},
+        validators=[DataRequired()]
+    )
 
 
     submit = SubmitField('Войти')
