@@ -36,7 +36,7 @@ class RegistrationForm(FlaskForm):
 
 class LoginForm(FlaskForm):
     email = EmailField(
-        'Username', 
+        'Email', 
         render_kw={"placeholder": "Введите адрес электронной почты"}, 
         validators=[DataRequired()]
     )

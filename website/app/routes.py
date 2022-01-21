@@ -1,5 +1,5 @@
 from flask import render_template, redirect, request
-from app import app
+from app import app, db
 from app.forms import RegistrationForm, LoginForm
 from flask_login import current_user, login_user, logout_user, login_required
 from app.models import User
@@ -16,9 +16,16 @@ def index():
 
 @app.route('/registration', methods=['GET', 'POST'])
 def registration():
+    if current_user.is_authenticated:
+        return redirect(url_for('index'))
     form = RegistrationForm()
     if form.validate_on_submit():
-        return redirect("/index")
+        user = User(username=form.username.data, email=form.email.data)
+        user.set_password(form.password.data)
+        db.session.add(user)
+        db.session.commit()
+        flash('Поздравляем, вы зарегестрированы!')
+        return redirect(url_for('login'))
     return render_template('registration.html', title='Registration', form=form)
 
 @app.route('/login', methods=['GET', 'POST'])
