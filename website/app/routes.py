@@ -12,7 +12,7 @@ from werkzeug.urls import url_parse
 @app.route('/index', methods=['GET', 'POST'])
 @login_required
 def index():
-    return render_template("index.html", title='Home Page')
+    return render_template("index.html", title='Домашняя страница')
 
 @app.route('/registration', methods=['GET', 'POST'])
 def registration():
@@ -26,7 +26,7 @@ def registration():
         db.session.commit()
         flash('Поздравляем, вы зарегестрированы!')
         return redirect(url_for('login'))
-    return render_template('registration.html', title='Registration', form=form)
+    return render_template('registration.html', title='Регистрация', form=form)
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -44,7 +44,7 @@ def login():
             next_page = url_for('index')
             return(next_page)
         return redirect(url_for('index'))
-    return render_template('login_page.html', title='Login', form=form)
+    return render_template('login_page.html', title='Вход', form=form)
 
 @app.route('/logout')
 def logout():
