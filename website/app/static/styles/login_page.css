@@ -125,6 +125,24 @@ body {
     font-family: 'Sansation_Regular';
 }
 
+.login_button {
+    width: 193px;
+    height: 18px;
+    left: 137px;
+    color:#5B93A9;
+    /* позиция блока */
+    position: relative;
+    margin-bottom: 20px;
+    /* Текст */
+    font-family: 'Sansation_Regular';
+    font-style: normal;
+    text-decoration: underline;
+    font-size: 16px;
+    line-height: 18px;
+    text-align: center;
+    
+}
+
 .error-string {
     margin-left: 25px;
     text-align: center;
