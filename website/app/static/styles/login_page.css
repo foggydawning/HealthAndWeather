@@ -125,22 +125,21 @@ body {
     font-family: 'Sansation_Regular';
 }
 
-.login_button {
+.registration_button {
+    position: absolute;
     width: 193px;
     height: 18px;
-    left: 137px;
+    left: 150px;
     color:#5B93A9;
     /* позиция блока */
     position: relative;
-    margin-bottom: 20px;
     /* Текст */
+    text-align: center;
     font-family: 'Sansation_Regular';
     font-style: normal;
     text-decoration: underline;
     font-size: 16px;
     line-height: 18px;
-    text-align: center;
-    
 }
 
 .error-string {
