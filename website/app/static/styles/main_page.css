@@ -1,9 +1,8 @@
-body {
+/* body {
     font-family: 'Open_Sans';
     font-size: 100%;
     color: #DAE4ED;
-    
-}
+} */
 
 .wrapper {
     overflow: hidden;
@@ -15,52 +14,44 @@ body {
 .main {
     flex: 1 1 auto;
     background-image: url('../images/backgrounds/Rectangle\ 2.jpg');
-    /* width: 1438px;
-    height: 704px; */
     background-repeat: no-repeat;
     background-position: 50% 100%;
     border-radius: 10px;
-    /*если убрать длину и ширину, меняет местоположение*/
- 
-}
-
-[class*="__container"] {
-    max-width: 1354px;
-    margin: 0px auto;
 }
 
 .header {
-    background-image: url('../images/backgrounds/index_background.jpg');
+    background-image: url('../images/backgrounds/main_background.jpg');
     background-repeat: no-repeat;
-    background-position: 50% 15%;
+    background-position: 50% 29%;
     border-radius: 10px;
-    
-    /*Не работает бордер? В мейне работает, разрешение одно*/
+    height: 150px;
+    padding: 1%;
+    margin: auto;
+    position:relative;
 }
 
-
-
-.header__container {
-    display: flex;
-    min-height: 320px;
-    
+.header_nav_container {
+    position: absolute;
+    top: 10%;
+    right: 5%;
 }
 
-
-.header__logo{
-    padding-top: 220px;
-}
-.header__menu{
-    flex: 1 1 auto;
-    padding-top: 30px;
+.header_image {
+    position: absolute;
+    bottom: 10%;
+    left: 1%;
+    height: 50%;
 }
 
-.menu {
-    display: flex;
-    justify-content: flex-end;   
-    padding: 0px 20px 0px 0px ;
-}
-.menu__list{
+/* .menu { */
+    /* display: flex; */
+    /* position: relative;
+    left: 0; */
+    /* justify-content: flex-end;    */
+    /* padding: 0px 20px 0px 0px ; */
+/* } */
+
+/* .header_menu_list{
     display: flex;
     text-transform: uppercase;
     font-style: normal;
@@ -69,9 +60,9 @@ body {
     line-height: 2.7;
     text-align: center;
     color: #DAE4ED;
+} */
 
-}
-.menu__item{
+/* .menu_item{
     margin: 0px -70px 0px 0px;
     color: #DAE4ED;
     text-transform: uppercase;
@@ -84,26 +75,25 @@ body {
     text-decoration: none;  
     list-style-type: none;
     
-    /*Проблемы с кнопкой в связи с разрешением экрана? Пришлось загонять из ограничителя шапки*/
-}
-.menu__link{
+    Проблемы с кнопкой в связи с разрешением экрана? Пришлось загонять из ограничителя шапки */
+/* } */
+
+.menu_link{
     text-transform: uppercase;
     font-style: normal;
     font-weight: normal;
     font-size: 20px;
-    line-height: 2.7;
     text-align: center;
     color: #DAE4ED; 
     text-decoration: none;  
     list-style-type: none;
-
 }
-.date {
+/* .date {
     font-style: normal;
     font-weight: normal;
     font-size: 30px;
     line-height: 41px;
     text-align: center;
     color: #DAE4ED;
-}
+} */
 
