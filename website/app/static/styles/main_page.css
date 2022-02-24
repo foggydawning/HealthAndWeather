@@ -17,6 +17,7 @@ body {
     background-repeat: no-repeat;
     background-position: 50% 100%;
     border-radius: 10px;
+    position: relative;
 }
 
 .header {
@@ -43,6 +44,37 @@ body {
     height: 50%;
 }
 
+.text_header1 {
+    background-image: url('../images/backgrounds/Rectangle\ 3.jpg');
+    background-position: 5% 50%;
+    background-repeat: no-repeat;
+    padding: 1%;
+    margin: auto;
+    height: 174px;
+    position: relative;
+    border-radius: 10px;
+    /* Значения margin/padding между первым и вторым (нижним) текстовым блоками (нижний блок text_header2) */
+    /*текстфилды-прямоугольники я заменил на обычные, но бордер тем не менее работать не хочет( */
+}
+
+.prediction {
+    position: absolute;
+}
+
+.text_header2 {
+    background-image: url('../images/backgrounds/Rectangle\ 4.jpg');
+    background-position: 5% 80%;
+    background-repeat: no-repeat;
+    padding: 1%;
+    margin: auto;
+    height: 174px;
+    position: relative;
+    border-radius: 10px;
+}
+
+.assessment{
+    position: absolute;
+}
 
 .menu_link{
     text-transform: uppercase;
@@ -54,6 +86,19 @@ body {
     text-decoration: none;  
     list-style-type: none;
 }
+
+.graph{
+    background-image: url('../images/backgrounds/Rectangle\ 4.jpg');
+    background-position: 90% 100%;
+    background-repeat: no-repeat;
+    padding: 1%;
+    margin: auto;
+    position: relative;
+    border-radius: 10px;
+    min-height: 447px;
+
+}
+
 .date {
     font-style: normal;
     font-weight: normal;
