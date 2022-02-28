@@ -13,9 +13,6 @@ body {
 
 .main {
     flex: 1 1 auto;
-    background-image: url('../images/backgrounds/Rectangle\ 2.jpg');
-    background-repeat: no-repeat;
-    background-position: 50% 100%;
     border-radius: 10px;
     position: relative;
 }
@@ -44,44 +41,51 @@ body {
     height: 50%;
 }
 
-.text_header1 {
-    background-image: url('../images/backgrounds/Rectangle\ 3.jpg');
-    background-position: 5% 50%;
-    background-repeat: no-repeat;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 1%;
-    margin: auto;
-    height: 174px;
-    position: relative;
+#rectangle_main {
     border-radius: 10px;
-    /* Значения margin/padding между первым и вторым (нижним) текстовым блоками (нижний блок text_header2) */
-    /*текстфилды-прямоугольники я заменил на обычные, но бордер тем не менее работать не хочет( */
+    width: 100%;
+    height: 704px;
+    background: #323943;
+    position: relative;
+    
+    
+}
+
+#rectangle {
+    border-radius: 10px;
+    width: 571px;
+    height: 174px;
+    top: 26%;
+    left: 2%;
+    background: #4E5669;
+    position: absolute;
+    
 }
 
 .prediction {
     position: absolute;
-    vertical-align: center;
+    text-align: center;
+    top: 30%;
     left: 7%;
-    /*Выравнивание текста по центру!*/
+    
 }
 
-.text_header2 {
-    background-image: url('../images/backgrounds/Rectangle\ 4.jpg');
-    background-position: 5% 80%;
-    background-repeat: no-repeat;
-    padding: 1%;
-    margin: auto;
-    height: 174px;
-    position: relative;
+#rectangle_1 {
     border-radius: 10px;
+    width: 571px;
+    height: 103px;
+    top: 75%;
+    left: 2%;
+    background: #4E5669;
+    position: absolute;
+
 }
 
 .assessment{
     position: absolute;
-    left: 20%;
-    top: 50%;
+    left: 15%;
+    top: 77.5%;
+    word-spacing: 40px;
     
 }
 
@@ -110,7 +114,8 @@ body {
 .divider{
     position: absolute;
     left: 17.5%;
-    top: 59%
+    top: 57%;
+    
 }
 
 .date {
