@@ -5,13 +5,16 @@ from flask_login import current_user, login_user, logout_user, login_required
 from app.models import User
 from flask import flash
 from flask import url_for
-from werkzeug.urls import url_parse
 
+def save_values(value1: int, value2: int, value3: int):
+    print(value1, value2, value3)
 
 @app.route('/')
 @app.route('/main', methods=['GET', 'POST'])
 @login_required
-def index():
+def main():
+    if request.method == "POST":
+        print(request.form)
     return render_template("main.html", title='Домашняя страница')
 
 @app.route('/registration', methods=['GET', 'POST'])
@@ -36,13 +39,9 @@ def login():
     if form.validate_on_submit():
         user = User.query.filter_by(username=form.email.data).first()
         if user is None or not user.check_password(form.password.data):
-            flash('Invalid username or password')
+            flash('Неправильный логи или пароль')
             return redirect(url_for('login'))
         login_user(user)
-        next_page = request.args.get('next')
-        if not next_page or url_parse(next_page).netloc != '':
-            next_page = url_for('main')
-            return(next_page)
         return redirect(url_for('main'))
     return render_template('login_page.html', title='Вход', form=form)
 
