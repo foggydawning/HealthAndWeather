@@ -1,25 +1,51 @@
-from flask import render_template, flash
-from werkzeug.utils import redirect
-from app import app
-from app.forms import RegistrationForm
-from app.forms import LoginForm
+from flask import render_template, redirect, request
+from app import app, db
+from app.forms import RegistrationForm, LoginForm
+from flask_login import current_user, login_user, logout_user, login_required
+from app.models import User
+from flask import flash
+from flask import url_for
 
+def save_values(value1: int, value2: int, value3: int):
+    print(value1, value2, value3)
 
-@app.route('/index', methods=['GET', 'POST'])
-def index():
-    return render_template("index.html")
-
+@app.route('/')
+@app.route('/main', methods=['GET', 'POST'])
+@login_required
+def main():
+    if request.method == "POST":
+        print(request.form)
+    return render_template("main.html", title='Домашняя страница')
 
 @app.route('/registration', methods=['GET', 'POST'])
 def registration():
+    if current_user.is_authenticated:
+        return redirect(url_for('index'))
     form = RegistrationForm()
     if form.validate_on_submit():
-        return redirect("/index")
-    return render_template('registration.html', title='Registration', form=form)
+        user = User(username=form.email.data, email=form.email.data)
+        user.set_password(form.password.data)
+        db.session.add(user)
+        db.session.commit()
+        flash('Поздравляем, вы зарегестрированы!')
+        return redirect(url_for('login'))
+    return render_template('registration.html', title='Регистрация', form=form)
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
+    if current_user.is_authenticated:
+        return redirect(url_for('main'))
     form = LoginForm()
     if form.validate_on_submit():
-        return redirect("/index")
-    return render_template('login_page.html', title='Login', form=form)
+        user = User.query.filter_by(username=form.email.data).first()
+        if user is None or not user.check_password(form.password.data):
+            flash('Неправильный логи или пароль')
+            return redirect(url_for('login'))
+        login_user(user)
+        return redirect(url_for('main'))
+    return render_template('login_page.html', title='Вход', form=form)
+
+@app.route('/logout')
+def logout():
+    logout_user()
+    return redirect(url_for('main'))

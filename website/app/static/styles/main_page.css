@@ -1,0 +1,220 @@
+@font-face {
+    font-family: "OpenSansLight";
+    src: url("../fonts/OpenSans-Light.ttf") format("truetype");
+}
+
+h1 {
+    font-family: 'OpenSansLight';
+    font-size: 20pt;
+    letter-spacing: 1px;
+    color: rgba(218, 228, 237, 1);
+    font-style: normal;
+    font-weight: 600;
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+
+p {
+    font-family: 'OpenSansLight';
+    font-size: 12pt;
+    letter-spacing: 1px;
+    color: white;
+    font-style: normal;
+    font-weight: 600;
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+
+button {
+    font-family: 'OpenSansLight';
+    font-size: 12pt;
+    letter-spacing: 1px;
+    color: white;
+    font-style: normal;
+    font-weight: 600;
+}
+
+body {
+    /* padding */
+    padding-left: 4.5vw;
+    padding-right: 4.5vw;
+    padding-top: 9.5vh;
+    padding-bottom: 50px;
+
+    /* margin */
+    margin: 0;
+
+    /* background */
+    background-image: url('../images/backgrounds/MainBackground.png');
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.bodyWithoutPadding {
+    display: flex;
+    flex-wrap: wrap-reverse;
+}
+
+.leftMainBlock {
+    flex-basis: 620px;
+}
+
+.rigthMainBlock {
+    flex-basis: 25vw;
+    flex-grow: 1;
+}
+
+.leftMainBlockSubblock1 {
+    display: flex;
+    flex-direction: column;
+    margin-left: 40px;
+}
+
+.leftMainBlockSubblock1LogoH1 {
+    margin-bottom: 10px;
+}
+
+.leftMainBlockSubblock2 {
+    height: 136px;
+    margin-top: 38px;
+    border: 2px solid rgba(255, 255, 255, 0.55);
+    background: rgba(43, 53, 67, 0.35);
+    display: flex;
+    flex-direction: column;
+}
+
+.leftMainBlockSubblock2Label {
+    width: 270px;
+    justify-content: center;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+    margin-top: auto;
+}
+
+.leftMainBlockSubblock3 {
+    display: flex;
+    flex-direction: column;
+
+    margin-top: 38px;
+    padding-top: 14px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 28px;
+
+    border: 2px solid rgba(255, 255, 255, 0.55);
+    background: rgba(43, 53, 67, 0.35);
+}
+
+.leftMainBlockSubblock3Row {
+    margin-top: 22px;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    height: 44px;
+}
+
+.leftMainBlockSubblock3ButtonRow {
+    margin-top: 26px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.leftMainBlockSubblock3Button {
+    color: white;
+    background-color: rgba(0,0,0,0%);
+    border-width: 1px;
+    border-color: white;
+    border-style: solid;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 0px;
+    padding-right: 0px;
+    width: 270px;
+    cursor: pointer;
+}
+
+.choiceBox {
+    display: flex;
+    justify-content: center;
+}
+.choiceBox input[type=radio] {
+    display: none;
+}
+.choiceBox label {
+    display: flex;
+    width: 44px;
+    height: 44px;
+    cursor: pointer;
+    border-radius: 25px;
+    align-items: center;
+    justify-content: center;
+    font-family: 'OpenSansLight';
+    font-size: 12pt;
+    letter-spacing: 1px;
+    color: white;
+    font-style: normal;
+    font-weight: 600;
+}
+
+/* Checked */
+.choiceBox input[type=radio]:checked + label {
+    border: 1px solid white;
+    width: 42px;
+    height: 42px;
+}
+
+
+.leftMainBlockSubblock4 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin-top: 38px;
+    padding-top: 28px;
+    padding-bottom: 28px;
+
+    border: 2px solid rgba(255, 255, 255, 0.55);
+    background: rgba(43, 53, 67, 0.35);
+}
+
+.leftMainBlockSubblock4Photo {
+    width: 522px;
+    height: 162px;
+}
+
+.userBlock {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 84px;
+}
+
+.userBlockRow1 {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.userImage {
+    height: 60px;
+    width: 60px;
+    border-radius: 30px;
+    margin-left: 30px;
+}
+
+.userBlockTime {
+    margin-left: 16px;
+}
+
+.userBlockRow2 {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 20px;
+}

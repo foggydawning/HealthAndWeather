@@ -9,6 +9,7 @@
 
     <body>
         <div class="login-form-container">
+            
             <h1 class = "login-form-title">
                 Войдите
             </h1>
@@ -45,6 +46,7 @@
                     <td> <input type="image" src="{{ url_for('static',filename='images/vk-icon.png') }}" alt=""> </td>
                 </tr>
             </table>
+            <a href="{{ url_for('registration') }}" class="registration_button">Зарегестрироваться</a>
         </div>
     </body>
 </html>

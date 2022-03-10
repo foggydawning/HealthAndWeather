@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/main_page.css') }}">
+        <title>Главная страница</title>
+    </head>
+
+    <body>
+        <div class="bodyWithoutPadding">
+            <div class="leftMainBlock">
+                <div class="leftMainBlockSubblock1">
+                    <h1 class="leftMainBlockSubblock1LogoH1">Health predict</h1>
+                    <p>Следите за своим здоровьем</p>
+                </div>
+                <div class="leftMainBlockSubblock2">
+                    <p class="leftMainBlockSubblock2Label">
+                        Сегодня вероятнее всего у вас будет болеть голова, а так же будет повышено давление
+                    </p>
+                </div>
+                <div class="leftMainBlockSubblock3">
+                    <div class="leftMainBlockSubblock3Row">
+                        <p>Оцените ваше самочувствие</p>
+                        <div class="choiceBox">
+                            <div class="choiceBox">
+                                <input id="radio11" type="radio" name="radio1" value="1" checked>
+                                <label for="radio11">1</label>
+                            </div>
+                            <div class="choiceBox">
+                                <input id="radio12" type="radio" name="radio1" value="2" checked>
+                                <label for="radio12">2</label>
+                            </div>
+                            <div class="choiceBox">
+                                <input id="radio13" type="radio" name="radio1" value="3" checked>
+                                <label for="radio13">3</label>
+                            </div>
+                            <div class="choiceBox">
+                                <input id="radio14" type="radio" name="radio1" value="4" checked>
+                                <label for="radio14">4</label>
+                            </div>
+                            <div class="choiceBox">
+                                <input id="radio15" type="radio" name="radio1" value="5" checked>
+                                <label for="radio15">5</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="leftMainBlockSubblock3Row">
+                        <p>Болит ли у вас голова? </p>
+                        <div class="choiceBox">
+                            <div class="choiceBox">
+                                <input id="radio21" type="radio" name="radio2" value="1" checked>
+                                <label for="radio21">Да</label>
+                            </div>
+                            <div class="choiceBox">
+                                <input id="radio22" type="radio" name="radio2" value="0" checked>
+                                <label for="radio22">Нет</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="leftMainBlockSubblock3Row">
+                        <p>Ваше давление повышено? </p>
+                        <div class="choiceBox">
+                            <div class="choiceBox">
+                                <input id="radio31" type="radio" name="radio3" value="1" checked>
+                                <label for="radio31">Да</label>
+                            </div>
+                            <div class="choiceBox">
+                                <input id="radio32" type="radio" name="radio3" value="0" checked>
+                                <label for="radio32">Нет</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="leftMainBlockSubblock3ButtonRow">
+                        <button class="leftMainBlockSubblock3Button">Отправить</button>
+                    </div>
+                </div>
+                <div class="leftMainBlockSubblock4">
+                    <img class="leftMainBlockSubblock4Photo" src="{{url_for('static',filename='images/GraphMock.svg') }}">
+                </div>
+            </div>
+            <div class="rigthMainBlock">
+                <div class="userBlockRow1">
+                    <p>Илья Чуб</p>
+                    <img class="userImage" src="{{url_for('static',filename='images/UserImageMock.png') }}">
+                </div>
+                <div class="userBlockRow2">
+                    <p>Санкт-Петербург</p>
+                    <p class="userBlockTime">10 марта 23:23</p>
+                </div>
+
+            </div>
+        </div>
+    </body>  
+</html>
