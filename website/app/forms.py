@@ -1,13 +1,13 @@
-from itertools import repeat
 from flask_wtf import FlaskForm
-from wtforms import PasswordField, SubmitField, EmailField
-from wtforms.validators import DataRequired
+from wtforms import PasswordField, SubmitField, EmailField, BooleanField
+from wtforms.validators import DataRequired, Email, EqualTo, ValidationError
+from app.models import User
 
 class RegistrationForm(FlaskForm):
     email = EmailField(
-        'Username', 
+        'Email', 
         render_kw={"placeholder": "Введите адрес электронной почты"}, 
-        validators=[DataRequired()]
+        validators=[DataRequired(), Email()]
     )
 
     password = PasswordField(
@@ -17,17 +17,21 @@ class RegistrationForm(FlaskForm):
     )
 
     repeat_password = PasswordField(
-        'Password',
+        'Repeat Password',
         render_kw={"placeholder": "Повторите пароль"},
-        validators=[DataRequired()]
+        validators=[DataRequired(), EqualTo('password')]
     )
-
-
+    
     submit = SubmitField('Зарегестрироваться')
+
+    def validate_email(self, email):
+        user = User.query.filter_by(email=email.data).first()
+        if user is not None:
+            raise ValidationError('Кажется, такой email уже зарегистрирован.')
 
 class LoginForm(FlaskForm):
     email = EmailField(
-        'Username', 
+        'Email', 
         render_kw={"placeholder": "Введите адрес электронной почты"}, 
         validators=[DataRequired()]
     )
@@ -39,3 +43,4 @@ class LoginForm(FlaskForm):
     )
 
     submit = SubmitField('Войти')
+
