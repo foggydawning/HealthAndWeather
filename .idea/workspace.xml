@@ -5,9 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5f7faae8-5094-4eb8-ac72-4d36d93a0258" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/website/app/ipdata_manager.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/website/app/openweather_manager.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/website/app/weather.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/website/migrations/versions/090a6cedddb7_fix_col_in_data_table.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/website/app.db" beforeDir="false" afterPath="$PROJECT_DIR$/website/app.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/app/templates/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/website/app/templates/main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/website/app/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/app/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/website/app/routes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/website/config.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,6 +22,13 @@
   </component>
   <component name="ComposerSettings">
     <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -27,6 +40,9 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/HAWVenv/lib/python3.10/site-packages/flask/app.py" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -55,6 +71,9 @@
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
+  <component name="ReaderModeSettings">
+    <option name="enabled" value="false" />
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -73,7 +92,7 @@
       <workItem from="1647018581982" duration="1910000" />
       <workItem from="1647099769604" duration="1134000" />
       <workItem from="1647255288632" duration="2868000" />
-      <workItem from="1647260266270" duration="315000" />
+      <workItem from="1647260266270" duration="824000" />
     </task>
     <servers />
   </component>

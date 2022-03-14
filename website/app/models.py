@@ -25,7 +25,7 @@ class Data(db.Model):
     is_head_hurts = db.Column(db.Integer)
     is_high_pressure = db.Column(db.Integer)
     temperature = db.Column(db.Integer)
-    humidity = db.Column(db.Integer)
+    pressure = db.Column(db.Integer)
 
 @login.user_loader
 def load_user(id):

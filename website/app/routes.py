@@ -1,10 +1,13 @@
-from flask import render_template, redirect, request
+import flask_login
+from flask import render_template, redirect, request, flash, url_for
 from app import app, db
+from app.weather import Weather
+from app.ipdata_manager import IpdataManager
+from app.openweather_manager import OpenweatherManager
 from app.forms import RegistrationForm, LoginForm
 from flask_login import current_user, login_user, logout_user, login_required
-from app.models import User
-from flask import flash
-from flask import url_for
+from app.models import User, Data
+
 
 def save_values(value1: int, value2: int, value3: int):
     print(value1, value2, value3)
@@ -14,7 +17,29 @@ def save_values(value1: int, value2: int, value3: int):
 @login_required
 def main():
     if request.method == "POST":
-        print(request.form)
+        ipdata_manager = IpdataManager()
+        openweather_manager = OpenweatherManager()
+
+        lat, long = ipdata_manager.get_lat_and_lon("188.242.175.115")
+        weather: Weather = openweather_manager.get_weather(lat, long)
+
+        user_answer = request.form
+        user_id = flask_login.current_user.id
+        data = Data(
+            user_id=user_id,
+            well_being=user_answer.get("radio1"),
+            is_head_hurts=user_answer.get("radio2"),
+            is_high_pressure=user_answer.get("radio3"),
+            temperature=weather.temperature,
+            pressure=weather.pressure,
+        )
+        db.session.add(data)
+        db.session.commit()
+        flash('Информация добавлена')
+
+
+
+        redirect(url_for('main'))
     return render_template("main.html", title='Домашняя страница')
 
 @app.route('/registration', methods=['GET', 'POST'])
