@@ -83,12 +83,36 @@
             </div>
             <div class="rigthMainBlock">
                 <div class="userBlockRow1">
-                    <p>Илья Чуб</p>
+                    <p>{{ username }}</p>
                     <img class="userImage" src="{{url_for('static',filename='images/UserImageMock.png') }}">
                 </div>
                 <div class="userBlockRow2">
-                    <p>Санкт-Петербург</p>
-                    <p class="userBlockTime">10 марта 23:23</p>
+                    <p> {{ city }} </p>
+                    <p class="userBlockTime">
+                       <div class="userBlockTime" id="date-time"></div>
+                        <script>
+                            var month = new Array();
+                                month[0] = "января";
+                                month[1] = "вевраля";
+                                month[2] = "марта";
+                                month[3] = "апреля";
+                                month[4] = "мая";
+                                month[5] = "июня";
+                                month[6] = "июля";
+                                month[7] = "августа";
+                                month[8] = "сентября";
+                                month[9] = "октября";
+                                month[10] = "ноября";
+                                month[11] = "декабря";
+                            n =  new Date();
+                            month_number = n.getMonth() + 1;
+                            day = n.getDate();
+                            minutes =  n.getMinutes();
+                            minutes = minutes < 10 ? '0'+minutes : minutes;
+                            hours   =  n.getHours();
+                            document.getElementById("date-time").innerHTML = `${day} ${month[month_number]} ${hours}:${minutes}`;
+                        </script>
+                    </p>
                 </div>
 
             </div>

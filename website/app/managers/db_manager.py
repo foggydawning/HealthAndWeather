@@ -25,10 +25,10 @@ class DBManager:
         db.session.commit()
 
     def get_user(self, email: str) -> User:
-        return User.query.filter_by(username=email).first()
+        return User.query.filter_by(email=email).first()
 
-    def save_user(self, email: str, password: str):
-        user = User(username=email, email=password)
+    def save_user(self, username: str, email: str, password: str):
+        user = User(username=username, email=email)
         user.set_password(password)
         db.session.add(user)
         db.session.commit()
