@@ -3,12 +3,13 @@ from flask_login import current_user, login_user, logout_user, login_required
 
 from app import app
 
-from app.db_manager import DBManager
-from app.network_manager import NetworkManager
+from app.managers.db_manager import DBManager
+from app.managers.network_manager import NetworkManager
 from app.forms import RegistrationForm, LoginForm
 
+import time
 
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
 @app.route('/main', methods=['GET', 'POST'])
 @login_required
 def main():
@@ -16,7 +17,7 @@ def main():
         user_answer = NetworkManager().get_user_answer()
         weather = NetworkManager().get_weather()
         user_id = NetworkManager().get_user_id()
-        current_time = str("12.03.2022")
+        current_time = time.strftime('%A %B, %d %Y %H:%M:%S')
         DBManager().save_data (
             user_id=user_id,
             time=current_time,
@@ -25,7 +26,9 @@ def main():
         )
         flash('Информация добавлена')
         redirect(url_for('main'))
-    return render_template("main.html", title='Домашняя страница')
+    city = NetworkManager().get_city()
+    username = NetworkManager().get_user_username()
+    return render_template("main.html", city=city, username=username)
 
 @app.route('/registration', methods=['GET', 'POST'])
 def registration():
@@ -33,7 +36,7 @@ def registration():
         return redirect(url_for('index'))
     form = RegistrationForm()
     if form.validate_on_submit():
-        DBManager().save_user(form.email.data, form.password.data)
+        DBManager().save_user("Ilia", form.email.data, form.password.data)
         flash('Поздравляем, вы зарегестрированы!')
         return redirect(url_for('login'))
     return render_template('registration.html', title='Регистрация', form=form)

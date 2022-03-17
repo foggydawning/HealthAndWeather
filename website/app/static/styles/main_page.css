@@ -210,6 +210,12 @@ body {
 
 .userBlockTime {
     margin-left: 16px;
+    font-family: 'OpenSansLight';
+    font-size: 12pt;
+    letter-spacing: 1px;
+    color: white;
+    font-style: normal;
+    font-weight: 600;
 }
 
 .userBlockRow2 {

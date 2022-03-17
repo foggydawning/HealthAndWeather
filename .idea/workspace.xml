@@ -4,17 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5f7faae8-5094-4eb8-ac72-4d36d93a0258" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/website/app/ipdata_manager.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/website/app/openweather_manager.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/website/app/weather.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/website/migrations/versions/090a6cedddb7_fix_col_in_data_table.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/app.db" beforeDir="false" afterPath="$PROJECT_DIR$/website/app.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/website/app/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/app/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/website/app/routes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/website/config.py" afterDir="false" />
-    </list>
+    <list default="true" id="5f7faae8-5094-4eb8-ac72-4d36d93a0258" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -92,7 +82,8 @@
       <workItem from="1647018581982" duration="1910000" />
       <workItem from="1647099769604" duration="1134000" />
       <workItem from="1647255288632" duration="2868000" />
-      <workItem from="1647260266270" duration="824000" />
+      <workItem from="1647260266270" duration="1965000" />
+      <workItem from="1647518356475" duration="8172000" />
     </task>
     <servers />
   </component>
