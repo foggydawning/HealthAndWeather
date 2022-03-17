@@ -13,6 +13,3 @@ class IpdataManager:
         lon = float(response["longitude"])
         answer = (lat, lon)
         return  answer
-
-
-

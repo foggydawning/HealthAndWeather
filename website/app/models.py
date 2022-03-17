@@ -21,6 +21,7 @@ class User(UserMixin, db.Model):
 class Data(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    time = db.Column(db.String)
     well_being = db.Column(db.Integer)
     is_head_hurts = db.Column(db.Integer)
     is_high_pressure = db.Column(db.Integer)

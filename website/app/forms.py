@@ -43,4 +43,3 @@ class LoginForm(FlaskForm):
     )
 
     submit = SubmitField('Войти')
-

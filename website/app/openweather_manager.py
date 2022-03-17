@@ -1,6 +1,6 @@
 import requests
 
-from config import Config
+from app import Config
 from app.weather import Weather
 
 

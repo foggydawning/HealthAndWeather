@@ -1,44 +1,29 @@
-import flask_login
 from flask import render_template, redirect, request, flash, url_for
-from app import app, db
-from app.weather import Weather
-from app.ipdata_manager import IpdataManager
-from app.openweather_manager import OpenweatherManager
-from app.forms import RegistrationForm, LoginForm
 from flask_login import current_user, login_user, logout_user, login_required
-from app.models import User, Data
 
+from app import app
 
-def save_values(value1: int, value2: int, value3: int):
-    print(value1, value2, value3)
+from app.db_manager import DBManager
+from app.network_manager import NetworkManager
+from app.forms import RegistrationForm, LoginForm
+
 
 @app.route('/')
 @app.route('/main', methods=['GET', 'POST'])
 @login_required
 def main():
     if request.method == "POST":
-        ipdata_manager = IpdataManager()
-        openweather_manager = OpenweatherManager()
-
-        lat, long = ipdata_manager.get_lat_and_lon("188.242.175.115")
-        weather: Weather = openweather_manager.get_weather(lat, long)
-
-        user_answer = request.form
-        user_id = flask_login.current_user.id
-        data = Data(
+        user_answer = NetworkManager().get_user_answer()
+        weather = NetworkManager().get_weather()
+        user_id = NetworkManager().get_user_id()
+        current_time = str("12.03.2022")
+        DBManager().save_data (
             user_id=user_id,
-            well_being=user_answer.get("radio1"),
-            is_head_hurts=user_answer.get("radio2"),
-            is_high_pressure=user_answer.get("radio3"),
-            temperature=weather.temperature,
-            pressure=weather.pressure,
+            time=current_time,
+            user_answer=user_answer,
+            weather=weather
         )
-        db.session.add(data)
-        db.session.commit()
         flash('Информация добавлена')
-
-
-
         redirect(url_for('main'))
     return render_template("main.html", title='Домашняя страница')
 
@@ -48,10 +33,7 @@ def registration():
         return redirect(url_for('index'))
     form = RegistrationForm()
     if form.validate_on_submit():
-        user = User(username=form.email.data, email=form.email.data)
-        user.set_password(form.password.data)
-        db.session.add(user)
-        db.session.commit()
+        DBManager().save_user(form.email.data, form.password.data)
         flash('Поздравляем, вы зарегестрированы!')
         return redirect(url_for('login'))
     return render_template('registration.html', title='Регистрация', form=form)
@@ -62,7 +44,8 @@ def login():
         return redirect(url_for('main'))
     form = LoginForm()
     if form.validate_on_submit():
-        user = User.query.filter_by(username=form.email.data).first()
+        email = form.email.data
+        user = DBManager().get_user(email)
         if user is None or not user.check_password(form.password.data):
             flash('Неправильный логи или пароль')
             return redirect(url_for('login'))
