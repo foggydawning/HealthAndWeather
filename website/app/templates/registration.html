@@ -2,56 +2,48 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/registration_page.css') }}">
         <title>Регистрация</title>
     </head>
 
     <body>
-        <div class="register-form-container">
-            <h1 class = "registration-form-title">
-                Зарегистрируйтесь
-            </h1>
 
-            <form action="" method="post" novalidate>
-                <div class="register-form-textfields">
+        <div class="registrationBlock">
+            <div class="registrationBlockContent">
+                <h1>Регистрация</h1>
+                <form action="" method="post" novalidate>
                     {{ form.hidden_tag() }}
-                    <p>
-                        {% for error in form.email.errors %}
-                            <span class="error-string"> {{ error }}</span>
-                        {% endfor %}
-                        {{ form.email() }}
-                    </p>
-
-                    <p>
-                        {% for error in form.password.errors %}
-                            <span class="error-string"> {{ error }}</span>
-                        {% endfor %}
-                        {{ form.password() }}
-                    </p>
-
-                    <p>
-                        {% for error in form.repeat_password.errors %}
-                            <span class="error-string"> {{ error }}</span>
-                        {% endfor %}
-                        {{ form.repeat_password() }}
-                    </p>
-
+                    <div class="fieldsBlock">
+                        <div class="fieldsBlockRow">
+                            <div class="fieldsBlockRowBorder"> </div>
+                            {{ form.username() }}
+                            <div class="fieldsBlockRowBorder"> </div>
+                        </div>
+                        <div class="fieldsBlockRow">
+                            <div class="fieldsBlockRowBorder"> </div>
+                            {{ form.email() }}
+                            <div class="fieldsBlockRowBorder"> </div>
+                        </div>
+                        <div class="fieldsBlockRow">
+                            <div class="fieldsBlockRowBorder"> </div>
+                            {{ form.password() }}
+                            <div class="fieldsBlockRowBorder"> </div>
+                        </div>
+                        <div class="fieldsBlockRow">
+                            <div class="fieldsBlockRowBorder"> </div>
+                            {{ form.repeat_password() }}
+                            <div class="fieldsBlockRowBorder"> </div>
+                        </div>
+                    </div>
+                    <div class="button_block">
+                        {{ form.submit(class_="submit_button") }}
+                    </div>
+                </form>
+                <div class="loginBlock">
+                    <p>Уже есть аккаунт?</p>
+                    <a href="{{ url_for('login') }}"class="text"><p>Войти</p></a>
                 </div>
-
-                {{ form.submit(class_="button") }}
-
-            </form>
-            
-            <div class = "divider"> или зарегистрируйтесь через </div>
-            <table class="register-form-fast-registration-table">
-                <tr>
-                    <td> <input type="image" src="{{ url_for('static',filename='images/facebook-icon.png') }}" alt=""> </td>
-                    <td> <input type="image" src="{{ url_for('static',filename='images/google-icon.png') }}" alt=""> </td>
-                    <td> <input type="image" src="{{ url_for('static',filename='images/vk-icon.png') }}" alt=""> </td>
-                </tr>
-            </table>
-            <a href="{{ url_for('login') }}" class="login_button">Войти</a>
+            </div>
         </div>
     </body>
 </html>

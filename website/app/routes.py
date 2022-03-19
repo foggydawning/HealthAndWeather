@@ -33,10 +33,10 @@ def main():
 @app.route('/registration', methods=['GET', 'POST'])
 def registration():
     if current_user.is_authenticated:
-        return redirect(url_for('index'))
+        return redirect(url_for('login'))
     form = RegistrationForm()
     if form.validate_on_submit():
-        DBManager().save_user("Ilia", form.email.data, form.password.data)
+        DBManager().save_user(form.username.data, form.email.data, form.password.data)
         flash('Поздравляем, вы зарегестрированы!')
         return redirect(url_for('login'))
     return render_template('registration.html', title='Регистрация', form=form)
@@ -54,7 +54,7 @@ def login():
             return redirect(url_for('login'))
         login_user(user)
         return redirect(url_for('main'))
-    return render_template('login_page.html', title='Вход', form=form)
+    return render_template('login.html', title='Вход', form=form)
 
 @app.route('/logout')
 def logout():

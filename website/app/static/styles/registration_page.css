@@ -1,158 +1,159 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+@font-face {
+    font-family: "OpenSansLight";
+    src: url("../fonts/OpenSans-Light.ttf") format("truetype");
+}
+
+h1 {
+    font-family: 'OpenSansLight';
+    font-size: 15pt;
+    letter-spacing: 1px;
+    color: white;
+    font-style: normal;
+    font-weight: 600;
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+
+p {
+    font-family: 'OpenSansLight';
+    font-size: 12pt;
+    letter-spacing: 1px;
+    color: white;
+    font-style: normal;
+    font-weight: 600;
+    margin-block-start: 0;
+    margin-block-end: 0;
 }
 body {
-    font-family: 'Sansation_Regular';
-    font-size: 100%;
-    background-image: url('../images/backgrounds/registration_background.jpg');
-    background-size: cover;
+    /* margin */
+    margin: 0;
+
+    /* background */
+    background-image: url('../images/backgrounds/MainBackground.png');
+    background-position: 0 0;
     background-repeat: no-repeat;
-    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
-.register-form-container {
-    margin: 75px auto;
-    max-width: 475px;
-    background: rgba(242, 250, 255, 0.9);
-    border: 9px solid #6996a8;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 35px;
-    position: relative;
+
+.registrationBlock {
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+
+    width: 470px;
+    height: 534px;
+
+    border: 2px solid rgba(255, 255, 255, 0.55);
+    background: rgba(43, 53, 67, 0.35);
 }
-.register-form-textfields input {
-    /* характеристики блока */
-    width: 364px;
-    height: 59px;
-    /* позиция блока */
-    position: relative;
-    left: 50%;
-    transform: translate(-50%);
-    margin-bottom: 16px;
-    /* позиции внутренних объектов и их характеристики */
-    font-size: 16px;
+
+.registrationBlockContent {
+    margin-top: 48px;
+    margin-bottom: 48px;
+    margin-right: 75px;
+    margin-left: 75px;
+}
+
+.registrationBlockContent h1 {
     text-align: center;
-    font-family: 'Sansation_Regular';
-    
-    /* рамка */
-    background: 
-        linear-gradient(
-            rgba(242, 250, 255, 1),
-            rgba(242, 250, 255, 1)
-        ) padding-box,
-        linear-gradient( to left,
-            #8E77D0,
-            rgba(175, 154, 236, 0.87), 
-            #C2B0F5 ,  
-            #E3D9FF
-        ) border-box;
-    color: #313149;
-    padding: 10px;
-    border: 5px solid transparent;
-    border-radius: 25px;
-    display:inline-block; 
 }
-.registration-form-title {
-    margin-top: 50px;
+
+.fieldsBlock {
+    display: flex;
+    flex-direction: column;
+    margin-top: 32px;
+}
+
+.fieldsBlockRow  {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    margin-top: 22px;
+
+    height: 42px;
+    width: 321px;
+}
+
+.fieldsBlockRowBorder {
+    width: 1px;
+    height: 42px;
+
+    background: white;
+}
+
+.fieldsBlockRow input {
+    width: 312px;
+    height: 42px;
+
     text-align: center;
-    font-size: 35px;
-    font-weight: bold;
-        -webkit-text-stroke: 0.2px #6CBFD1; 
-    background: linear-gradient(
-        314.65deg, 
-        #6CBFD1 -0.61%, 
-        #83D1E2 23.49%, 
-        rgba(145, 219, 235, 0.87) 47.6%, 
-        #9DE1F0 76.94%, 
-        #A2E1EF 100%);
-        -webkit-background-clip: text;
-                background-clip: inset 0 0 6px rgba(0, 0, 0, 0.1);
-        -webkit-text-fill-color: transparent;
-}
-.register-form-textfields {
-    margin-top: 50px;
-}
-.button {
-    /* Характеристики блока */
-    height: 60px;
-    width: 305px;
-    background: 
-        linear-gradient(314.65deg, 
-        #6CBFD1 -0.61%, 
-        #83D1E2 23.49%,
-        rgba(145, 219, 235, 0.87) 47.6%, 
-        #9DE1F0 76.94%, 
-        #A2E1EF 100%);
-    color:#fff;
-    /* Граница */
-    border-radius: 35px;
-    border-width: 0px;
-    /* позиция блока */
-    position: relative;
-    left: 50%;
-    transform: translate(-50%);
-    margin-bottom: 16px;
-    /* Текст */
-    font-family: 'Sansation_Regular';
+
+    background: rgba(0,0,0,0%);
+    outline: none;
+    border-style: none;
+
+    color: white;
+    font-family: 'OpenSansLight';
+    font-size: 12pt;
+    letter-spacing: 1px;
     font-style: normal;
-    font-weight: normal;
-    -webkit-text-stroke: 0.5px #6CBFD1; 
-    font-size: 20px;
-    line-height: 22px;
-    text-align: center;
-        
-    /* Тень */
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-    /* Положение */
-    margin-top: 20px;
-}
-.register-form-fast-registration-table {
-    margin: auto;
-    text-align: center;
-    border-collapse: 50px;
-    width: 300px;
-    margin-bottom: 15px;
-}
-.register-form-fast-registration-table input {
-    width: 50px;
-    height: 50px;
-}
-.divider {
-    text-align: center;
-    margin-top: 10px;
-    margin-bottom: 20px;
-    color: #5B93A9;
-    font-family: 'Sansation_Regular';
+    font-weight: 600;
 }
 
-.login_button {
-    position: absolute;
-    width: 193px;
-    height: 18px;
-    left: 205px;
-    color:#5B93A9;
-    /* позиция блока */
-    position: relative;
-    /* Текст */
-    text-align: center;
-    font-family: 'Sansation_Regular';
+.button_block {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.submit_button {
+    margin-top: 60px;
+
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 0px;
+    padding-right: 0px;
+
+    width: 270px;
+
+    color: white;
+    font-family: 'OpenSansLight';
+    font-size: 12pt;
+    letter-spacing: 1px;
     font-style: normal;
-    text-decoration: underline;
-    font-size: 16px;
-    line-height: 18px;
+    font-weight: 600;
+
+    background-color: rgba(0,0,0,0%);
+
+    border-width: 1px;
+    border-color: white;
+    border-style: solid;
+
+    cursor: pointer;
 }
 
-.error-string {
-    margin-left: 25px;
-    text-align: center;
-    height: 13px;
-    font-size: 13px;
-    color: red
+.loginBlock {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+
+    margin-right: 28px;
+    margin-top: 14px;
 }
 
-@font-face {
-    font-family: "Sansation_Regular"; 
-    src: url("../fonts/Sansation_Regular.ttf") format("truetype"); 
-    font-style: normal; 
-    font-weight: normal; 
-} 
+a.text:active, /* активная/посещенная ссылка */
+a.text:hover,  /* при наведении */
+a.text {
+    text-decoration: none;
+}
+
+.loginBlock p {
+    font-size: 9pt;
+    margin-left: 15px;
+}

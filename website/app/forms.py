@@ -1,18 +1,24 @@
 from flask_wtf import FlaskForm
-from wtforms import PasswordField, SubmitField, EmailField, BooleanField
+from wtforms import PasswordField, SubmitField, EmailField, BooleanField, StringField
 from wtforms.validators import DataRequired, Email, EqualTo, ValidationError
 from app.models import User
 
 class RegistrationForm(FlaskForm):
+    username = StringField(
+        'Username',
+        render_kw={"placeholder": "Имя"},
+        validators=[DataRequired()]
+    )
+
     email = EmailField(
         'Email', 
-        render_kw={"placeholder": "Введите адрес электронной почты"}, 
+        render_kw={"placeholder": "Электронная почта"},
         validators=[DataRequired(), Email()]
     )
 
     password = PasswordField(
         'Password', 
-        render_kw={"placeholder": "Введите пароль"},
+        render_kw={"placeholder": "Пароль"},
         validators=[DataRequired()]
     )
 
@@ -27,7 +33,7 @@ class RegistrationForm(FlaskForm):
     def validate_email(self, email):
         user = User.query.filter_by(email=email.data).first()
         if user is not None:
-            raise ValidationError('Кажется, такой email уже зарегистрирован.')
+            raise ValidationError('Кажется, такой email уже зарегистрирован')
 
 class LoginForm(FlaskForm):
     email = EmailField(
