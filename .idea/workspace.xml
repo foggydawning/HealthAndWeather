@@ -7,10 +7,6 @@
     <list default="true" id="5f7faae8-5094-4eb8-ac72-4d36d93a0258" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/website/app.db" beforeDir="false" afterPath="$PROJECT_DIR$/website/app.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/app/managers/ipdata_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/website/app/managers/ipdata_manager.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/app/static/styles/registration_page.css" beforeDir="false" afterPath="$PROJECT_DIR$/website/app/static/styles/registration_page.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/app/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/website/app/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/app/templates/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/website/app/templates/main.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,7 +85,7 @@
       <workItem from="1647260266270" duration="1965000" />
       <workItem from="1647518356475" duration="8172000" />
       <workItem from="1647719916364" duration="1096000" />
-      <workItem from="1647867999263" duration="1008000" />
+      <workItem from="1647867999263" duration="1785000" />
     </task>
     <servers />
   </component>

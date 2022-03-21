@@ -15,7 +15,7 @@ class OpenweatherManager:
                                params={'lat': lat, 'lon': lon, 'appid': self.api_key})
             data = res.json()
             temperature = float(data["main"]["temp"]) - 271.1
-            pressure = float(data["main"]["pressure"])
+            pressure = float(data["main"]["pressure"]) / 10 * 7.500616827041698
             weather = Weather(pressure=pressure, temperature=temperature)
             return  weather
         except Exception as e:
