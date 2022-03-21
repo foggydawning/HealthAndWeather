@@ -6,7 +6,7 @@ class IpdataManager:
     def __init__(self):
         self.api_key = Config.IPDATA_API_KEY
 
-    def get_response(self, ip: str) ->  dict[str, int] | dict[str, str | int] :
+    def get_response(self, ip: str):
         ip_data = ipdata.IPData(self.api_key)
         response = ip_data.lookup(ip)
         return response

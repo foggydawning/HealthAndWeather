@@ -53,6 +53,18 @@ body {
     background: rgba(43, 53, 67, 0.35);
 }
 
+.mainLoginBlock {
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+
+    width: 470px;
+    height: 420px;
+
+    border: 2px solid rgba(255, 255, 255, 0.55);
+    background: rgba(43, 53, 67, 0.35);
+}
+
 .registrationBlockContent {
     margin-top: 48px;
     margin-bottom: 48px;

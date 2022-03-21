@@ -90,27 +90,31 @@
                     <p> {{ city }} </p>
                     <p class="userBlockTime">
                        <div class="userBlockTime" id="date-time"></div>
-                        <script>
-                            var month = new Array();
-                                month[0] = "января";
-                                month[1] = "вевраля";
-                                month[2] = "марта";
-                                month[3] = "апреля";
-                                month[4] = "мая";
-                                month[5] = "июня";
-                                month[6] = "июля";
-                                month[7] = "августа";
-                                month[8] = "сентября";
-                                month[9] = "октября";
-                                month[10] = "ноября";
-                                month[11] = "декабря";
-                            n =  new Date();
-                            month_number = n.getMonth() + 1;
-                            day = n.getDate();
-                            minutes =  n.getMinutes();
-                            minutes = minutes < 10 ? '0'+minutes : minutes;
-                            hours   =  n.getHours();
-                            document.getElementById("date-time").innerHTML = `${day} ${month[month_number]} ${hours}:${minutes}`;
+                        <script type="text/javascript">
+                            const getCurrentTimeDate = () => {
+                                var month = new Array();
+                                month[1] = "января";
+                                month[2] = "февраля";
+                                month[3] = "марта";
+                                month[4] = "апреля";
+                                month[5] = "мая";
+                                month[6] = "июня";
+                                month[7] = "июля";
+                                month[8] = "августа";
+                                month[9] = "сентября";
+                                month[10] = "октября";
+                                month[11] = "ноября";
+                                month[12] = "декабря";
+                                n =  new Date();
+                                month_number = n.getMonth() + 1;
+                                day = n.getDate();
+                                minutes =  n.getMinutes();
+                                minutes = minutes < 10 ? '0'+minutes : minutes;
+                                hours   =  n.getHours();
+                                document.getElementById("date-time").innerHTML = `${day} ${month[month_number]} ${hours}:${minutes}`;
+                                setTimeout(getCurrentTimeDate, 500)
+                            }
+                            getCurrentTimeDate();
                         </script>
                     </p>
                 </div>
