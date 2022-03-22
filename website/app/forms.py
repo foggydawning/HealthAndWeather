@@ -1,3 +1,5 @@
+from django.forms import ImageField
+from django.shortcuts import render
 from flask_wtf import FlaskForm
 from wtforms import PasswordField, SubmitField, EmailField, BooleanField, StringField
 from wtforms.validators import DataRequired, Email, EqualTo, ValidationError

@@ -1,13 +1,24 @@
 from app import db, login
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin
+from flask_image_alchemy.fields import StdImageField
+from flask_image_alchemy.storages import S3Storage
 
+storage = S3Storage()
 class User(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(64), index=True)
     email = db.Column(db.String(120), index=True, unique=True)
     password_hash = db.Column(db.String(128))
     data = db.relationship('Data', backref='user', lazy='dynamic')
+    image = db.Column(
+        StdImageField(
+            storage=storage,
+            variations={
+                'thumbnail': {"width": 100, "height": 100, "crop": True}
+            }
+        ), nullable=True
+    )
 
     def __repr__(self):
         return '<User {}>'.format(self.username)
