@@ -3,6 +3,8 @@ from flask_login import current_user, login_user, logout_user, login_required
 
 from app import app
 
+from app.managers.gaussian_NB_manager import GaussianNBManager
+from app.managers.pandas_manager import PandasManager
 from app.managers.db_manager import DBManager
 from app.managers.network_manager import NetworkManager
 from app.forms import RegistrationForm, LoginForm
@@ -28,6 +30,12 @@ def main():
         redirect(url_for('main'))
     city = NetworkManager().get_city()
     username = NetworkManager().get_user_username()
+    pressure: int = NetworkManager().get_weather().pressure
+
+    pandas_manager = PandasManager()
+    user_id = NetworkManager().get_user_id()
+    data = pandas_manager.get_data(user_id)
+    gaussian_NB_Manager = GaussianNBManager(data, pressure)
     return render_template("main.html", city=city, username=username)
 
 @app.route('/registration', methods=['GET', 'POST'])
