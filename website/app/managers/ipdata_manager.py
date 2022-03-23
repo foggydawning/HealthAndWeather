@@ -1,3 +1,4 @@
+from typing import Tuple
 from ipdata import ipdata
 from config import Config
 
@@ -11,7 +12,7 @@ class IpdataManager:
         response = ip_data.lookup(ip)
         return response
 
-    def get_lat_and_lon(self, ip: str) -> (float, float):
+    def get_lat_and_lon(self, ip: str) -> Tuple[float, float]:
         response = self.get_response(ip)
         lat = float(response["latitude"])
         lon = float(response["longitude"])

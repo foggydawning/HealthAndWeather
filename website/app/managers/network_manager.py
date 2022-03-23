@@ -1,5 +1,5 @@
 import flask_login
-from typing import Dict
+from typing import Dict, Tuple
 from flask import request
 from app.weather import Weather
 from app.managers.ipdata_manager import IpdataManager
@@ -23,7 +23,7 @@ class NetworkManager:
     def get_user_username(self) -> str:
         return  flask_login.current_user.username
 
-    def get_lat_and_lon(self) -> (float, float):
+    def get_lat_and_lon(self) -> Tuple[float, float]:
         ip = self.get_ip()
         return self.ipdata_manager.get_lat_and_lon(ip)
 
