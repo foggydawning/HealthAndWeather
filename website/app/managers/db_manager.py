@@ -1,5 +1,6 @@
 from tkinter import Image
 from typing import Dict
+
 from app.weather import Weather
 from app.models import User, Data
 from app import db

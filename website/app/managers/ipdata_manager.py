@@ -23,3 +23,4 @@ class IpdataManager:
         response = self.get_response(ip)
         city = response["city"]
         return city
+        

@@ -1,3 +1,4 @@
+from tkinter import Image
 from app import db, login
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin
@@ -6,12 +7,12 @@ from flask_image_alchemy.storages import S3Storage
 
 storage = S3Storage()
 class User(UserMixin, db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    username = db.Column(db.String(64), index=True)
-    email = db.Column(db.String(120), index=True, unique=True)
-    password_hash = db.Column(db.String(128))
+    id: int = db.Column(db.Integer, primary_key=True)
+    username: str = db.Column(db.String(64), index=True)
+    email: str = db.Column(db.String(120), index=True, unique=True)
+    password_hash: str = db.Column(db.String(128))
     data = db.relationship('Data', backref='user', lazy='dynamic')
-    image = db.Column(
+    image: Image = db.Column(
         StdImageField(
             storage=storage,
             variations={
@@ -30,14 +31,14 @@ class User(UserMixin, db.Model):
         return check_password_hash(self.password_hash, password)
 
 class Data(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
-    time = db.Column(db.String)
-    well_being = db.Column(db.Integer)
-    is_head_hurts = db.Column(db.Integer)
-    is_high_pressure = db.Column(db.Integer)
-    temperature = db.Column(db.Integer)
-    pressure = db.Column(db.Integer)
+    id: int = db.Column(db.Integer, primary_key=True)
+    user_id: int = db.Column(db.Integer, db.ForeignKey('user.id'))
+    time: str = db.Column(db.String)
+    well_being: int = db.Column(db.Integer)
+    is_head_hurts: int = db.Column(db.Integer)
+    is_high_pressure: int = db.Column(db.Integer)
+    temperature: int = db.Column(db.Integer)
+    pressure: int = db.Column(db.Integer)
 
 @login.user_loader
 def load_user(id):

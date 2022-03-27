@@ -55,7 +55,7 @@ def login():
         return redirect(url_for('main'))
     form = LoginForm()
     if form.validate_on_submit():
-        email = form.email.data
+        email: str = form.email.data
         user = DBManager().get_user(email)
         if user is None or not user.check_password(form.password.data):
             flash('Неправильный логи или пароль')
