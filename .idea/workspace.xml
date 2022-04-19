@@ -5,7 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5f7faae8-5094-4eb8-ac72-4d36d93a0258" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/website/migrations/versions/a725f550593e_.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/HealthAndWeather.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/HealthAndWeather.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HAWVenv/bin/activate" beforeDir="false" afterPath="$PROJECT_DIR$/HAWVenv/bin/activate" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HAWVenv/bin/pip" beforeDir="false" afterPath="$PROJECT_DIR$/HAWVenv/bin/pip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HAWVenv/bin/pip3" beforeDir="false" afterPath="$PROJECT_DIR$/HAWVenv/bin/pip3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HAWVenv/bin/pip3.10" beforeDir="false" afterPath="$PROJECT_DIR$/HAWVenv/bin/pip3.10" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/website/app.db" beforeDir="false" afterPath="$PROJECT_DIR$/website/app.db" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -50,7 +56,6 @@
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -58,7 +63,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="ReaderModeSettings">
@@ -85,7 +90,14 @@
       <workItem from="1647260266270" duration="1965000" />
       <workItem from="1647518356475" duration="8172000" />
       <workItem from="1647719916364" duration="1096000" />
-      <workItem from="1647867999263" duration="1785000" />
+      <workItem from="1647867999263" duration="2259000" />
+      <workItem from="1647888551700" duration="324000" />
+      <workItem from="1647888902420" duration="2147000" />
+      <workItem from="1647967498216" duration="7535000" />
+      <workItem from="1648482181202" duration="783000" />
+      <workItem from="1648484260938" duration="113000" />
+      <workItem from="1649691329972" duration="1113000" />
+      <workItem from="1650385820294" duration="344000" />
     </task>
     <servers />
   </component>
