@@ -38,8 +38,9 @@ class Data(db.Model):
     is_head_hurts: int = db.Column(db.Integer)
     is_high_pressure: int = db.Column(db.Integer)
     temperature: int = db.Column(db.Integer)
+    magnetic_storms: int = db.Column(db.Integer)
     pressure: int = db.Column(db.Integer)
-
+    
 @login.user_loader
 def load_user(id):
     return User.query.get(int(id))
