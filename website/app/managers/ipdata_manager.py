@@ -1,5 +1,7 @@
 from typing import Tuple
+
 from ipdata import ipdata
+
 from config import Config
 
 
@@ -7,7 +9,7 @@ class IpdataManager:
     def __init__(self):
         self.api_key = Config.IPDATA_API_KEY
 
-    def get_response(self, ip: str) ->  dict[str, int] | dict[str, str | int]:
+    def get_response(self, ip: str) -> dict[str, int] | dict[str, str | int]:
         ip_data = ipdata.IPData(self.api_key)
         response = ip_data.lookup(ip)
         return response
@@ -23,4 +25,3 @@ class IpdataManager:
         response = self.get_response(ip)
         city = response["city"]
         return city
-        

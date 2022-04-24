@@ -4,28 +4,40 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5f7faae8-5094-4eb8-ac72-4d36d93a0258" name="Changes" comment="">
+    <list default="true" id="783ea9a9-d035-4c86-99eb-21cfdcf67677" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/website/app/managers/weather_manager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/HealthAndWeather.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/HealthAndWeather.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HAWVenv/bin/flask" beforeDir="false" afterPath="$PROJECT_DIR$/HAWVenv/bin/flask" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HAWVenv/bin/ipdata" beforeDir="false" afterPath="$PROJECT_DIR$/HAWVenv/bin/ipdata" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HAWVenv/bin/normalizer" beforeDir="false" afterPath="$PROJECT_DIR$/HAWVenv/bin/normalizer" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HAWVenv/bin/tqdm" beforeDir="false" afterPath="$PROJECT_DIR$/HAWVenv/bin/tqdm" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/website/app.db" beforeDir="false" afterPath="$PROJECT_DIR$/website/app.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/app/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/website/app/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/app/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/website/app/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/app/managers/db_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/website/app/managers/db_manager.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/website/app/managers/gaussian_NB_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/website/app/managers/gaussian_NB_manager.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/website/app/managers/ipdata_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/website/app/managers/ipdata_manager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/app/managers/magnetic_storms_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/website/app/managers/magnetic_storms_manager.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/website/app/managers/network_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/website/app/managers/network_manager.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/app/managers/pandas_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/website/app/managers/pandas_manager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/app/managers/openweather_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/website/app/managers/openweather_manager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/app/managers/pandas_manager.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/website/app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/website/app/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/website/app/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/website/app/routes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/app/templates/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/website/app/templates/main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/app/weather.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/website/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/migrations/env.py" beforeDir="false" afterPath="$PROJECT_DIR$/website/migrations/env.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/migrations/versions/090a6cedddb7_fix_col_in_data_table.py" beforeDir="false" afterPath="$PROJECT_DIR$/website/migrations/versions/090a6cedddb7_fix_col_in_data_table.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/migrations/versions/46664a8b971e_new_image.py" beforeDir="false" afterPath="$PROJECT_DIR$/website/migrations/versions/46664a8b971e_new_image.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/migrations/versions/4de0a6d8e488_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/website/migrations/versions/4de0a6d8e488_data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/migrations/versions/a725f550593e_.py" beforeDir="false" afterPath="$PROJECT_DIR$/website/migrations/versions/a725f550593e_.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/migrations/versions/ae00b1960587_users_and_data_tables.py" beforeDir="false" afterPath="$PROJECT_DIR$/website/migrations/versions/ae00b1960587_users_and_data_tables.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/migrations/versions/b4906d5ee789_update_user_table.py" beforeDir="false" afterPath="$PROJECT_DIR$/website/migrations/versions/b4906d5ee789_update_user_table.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/migrations/versions/d9b8c5f30d5e_add_time_col.py" beforeDir="false" afterPath="$PROJECT_DIR$/website/migrations/versions/d9b8c5f30d5e_add_time_col.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/website.py" beforeDir="false" afterPath="$PROJECT_DIR$/website/website.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="ComposerSettings">
-    <execution />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -34,77 +46,48 @@
       </list>
     </option>
   </component>
+  <component name="FlaskConsoleOptions" custom-start-script="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))">
+    <envs>
+      <env key="FLASK_APP" value="app" />
+    </envs>
+    <option name="myCustomStartScript" value="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))" />
+    <option name="myEnvs">
+      <map>
+        <entry key="FLASK_APP" value="app" />
+      </map>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="GitSEFilterConfiguration">
-    <file-type-list>
-      <filtered-out-file-type name="LOCAL_BRANCH" />
-      <filtered-out-file-type name="REMOTE_BRANCH" />
-      <filtered-out-file-type name="TAG" />
-      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
-    </file-type-list>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="263oBzJgJ7DjHJtIfNfl0SdrmEa" />
-  <component name="ProjectLevelVcsManager">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectId" id="28GDHGctUZ2UXoBSgb1SvSihnjo" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
-    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="DatabaseDriversLRU" value="sqlite" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
-    <property name="vue.rearranger.settings.migration" value="true" />
-  </component>
-  <component name="ReaderModeSettings">
-    <option name="enabled" value="false" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="5f7faae8-5094-4eb8-ac72-4d36d93a0258" name="Changes" comment="" />
-      <created>1646661502425</created>
+      <changelist id="783ea9a9-d035-4c86-99eb-21cfdcf67677" name="Changes" comment="" />
+      <created>1650833940652</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1646661502425</updated>
-      <workItem from="1646661504710" duration="1618000" />
-      <workItem from="1646744298772" duration="2254000" />
-      <workItem from="1646762544489" duration="7327000" />
-      <workItem from="1646833400074" duration="1363000" />
-      <workItem from="1646834949147" duration="1197000" />
-      <workItem from="1646908885279" duration="7481000" />
-      <workItem from="1646940640692" duration="3897000" />
-      <workItem from="1647018581982" duration="1910000" />
-      <workItem from="1647099769604" duration="1134000" />
-      <workItem from="1647255288632" duration="2868000" />
-      <workItem from="1647260266270" duration="1965000" />
-      <workItem from="1647518356475" duration="8172000" />
-      <workItem from="1647719916364" duration="1096000" />
-      <workItem from="1647867999263" duration="2259000" />
-      <workItem from="1647888551700" duration="324000" />
-      <workItem from="1647888902420" duration="2147000" />
-      <workItem from="1647967498216" duration="7535000" />
-      <workItem from="1648482181202" duration="783000" />
-      <workItem from="1648484260938" duration="113000" />
-      <workItem from="1649691329972" duration="1113000" />
-      <workItem from="1650385820294" duration="589000" />
-      <workItem from="1650823103551" duration="6746000" />
+      <updated>1650833940652</updated>
+      <workItem from="1650833941814" duration="128000" />
+      <workItem from="1650834074083" duration="2548000" />
     </task>
     <servers />
   </component>
@@ -121,8 +104,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>
