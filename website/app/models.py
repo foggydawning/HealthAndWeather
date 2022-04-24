@@ -2,24 +2,18 @@ from tkinter import Image
 from app import db, login
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin
-from flask_image_alchemy.fields import StdImageField
-from flask_image_alchemy.storages import S3Storage
+from hashlib import md5
 
-storage = S3Storage()
 class User(UserMixin, db.Model):
     id: int = db.Column(db.Integer, primary_key=True)
     username: str = db.Column(db.String(64), index=True)
     email: str = db.Column(db.String(120), index=True, unique=True)
     password_hash: str = db.Column(db.String(128))
     data = db.relationship('Data', backref='user', lazy='dynamic')
-    image: Image = db.Column(
-        StdImageField(
-            storage=storage,
-            variations={
-                'thumbnail': {"width": 100, "height": 100, "crop": True}
-            }
-        ), nullable=True
-    )
+    def avatar(self, size):
+        digest = md5(self.email.lower().encode('utf-8')).hexdigest()
+        return 'https://www.gravatar.com/avatar/{}?d=identicon&s={}'.format(
+            digest, size)
 
     def __repr__(self):
         return '<User {}>'.format(self.username)

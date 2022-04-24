@@ -84,7 +84,7 @@
             <div class="rigthMainBlock">
                 <div class="userBlockRow1">
                     <p>{{ username }}</p>
-                    <img class="userImage" src="{{url_for('static',filename='images/UserImageMock.png') }}">
+                    <td><img src="{{ user.avatar(128) }}"></td>
                 </div>
                 <div class="userBlockRow2">
                     <p> {{ city }} </p>
