@@ -1,4 +1,4 @@
-from typing import Dict, Tuple
+from typing import Dict, Tuple, Optional
 
 import flask_login
 from app.managers.ipdata_manager import IpdataManager
@@ -30,14 +30,20 @@ class NetworkManager:
     def get_user_avatar(self):
         return self.current_user.avatar()
 
-    def get_lat_and_lon(self) -> Tuple[float, float]:
+    def get_lat_and_lon(self) -> Optional[Tuple[float, float]]:
         return self.ipdata_manager.get_lat_and_lon()
 
-    def get_cur_weather(self) -> Weather:
-        lat, lon = self.get_lat_and_lon()
+    def get_cur_weather(self) -> Optional[Weather]:
+        lat_lon = self.get_lat_and_lon()
+        if lat_lon is None:
+            return None
+        lat, lon = lat_lon
         weather_manager = WeatherManager(lat=lat, lon=lon)
         weather = weather_manager.get_weather()
         return weather
 
     def get_city(self) -> str:
-        return self.ipdata_manager.get_city()
+        city = self.ipdata_manager.get_city()
+        if city is None:
+            city = "Город N"
+        return city

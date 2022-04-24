@@ -17,7 +17,7 @@ class IpdataManager:
             response = ip_data.lookup(ip)
             return response
         except Exception as e:
-            print("Exception (find):", e)
+            print(f"Ошибка при попытке получить ответ IPData: {e}")
             return None
 
     def get_lat_and_lon(self) -> Optional[Tuple[float, float]]:
@@ -27,7 +27,7 @@ class IpdataManager:
             answer = (lat, lon)
             return answer
         except Exception as e:
-            print("Exception (find):", e)
+            print(f"Ошибка при попытке определения широты и долготы: {e}")
             return None
 
     def get_city(self) -> Optional[str]:
@@ -35,6 +35,6 @@ class IpdataManager:
             city = self.response["city"]
             return city
         except Exception as e:
-            print("Exception (find):", e)
+            print(f"Ошибка при попытке определения города: {e}")
             return None
 

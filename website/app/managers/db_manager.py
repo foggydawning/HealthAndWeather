@@ -39,7 +39,7 @@ class DBManager:
             is_high_pressure=user_answer.get("radio3"),
             temperature=weather.temperature,
             pressure=weather.pressure,
-            magnetic_storms=weather.magnetic_stroms,
+            magnetic_storms=weather.magnetic_storms,
         )
         db.session.add(data)
         db.session.commit()
