@@ -6,7 +6,7 @@ from app import Config
 
 class OpenweatherManager:
     def __init__(self, lat: float, lon: float):
-        self.api_key = Config.OPENWEATHER_API_KEY
+        self.api_key = "951d06da3f4ceccd497a3dce3e2e1400"
         self.lat = (lat,)
         self.lon = lon
 

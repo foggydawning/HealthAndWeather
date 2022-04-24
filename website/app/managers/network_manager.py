@@ -9,7 +9,9 @@ from flask import request
 
 class NetworkManager:
     def __init__(self):
-        self.ipdata_manager = IpdataManager()
+        self.ipdata_manager = IpdataManager(
+            ip=self.get_ip()
+        )
         self.current_user: User = flask_login.current_user
 
     def get_ip(self):
@@ -29,8 +31,7 @@ class NetworkManager:
         return self.current_user.avatar()
 
     def get_lat_and_lon(self) -> Tuple[float, float]:
-        ip = self.get_ip()
-        return self.ipdata_manager.get_lat_and_lon(ip)
+        return self.ipdata_manager.get_lat_and_lon()
 
     def get_cur_weather(self) -> Weather:
         lat, lon = self.get_lat_and_lon()
@@ -39,5 +40,4 @@ class NetworkManager:
         return weather
 
     def get_city(self) -> str:
-        ip = self.get_ip()
-        return self.ipdata_manager.get_city(ip)
+        return self.ipdata_manager.get_city()

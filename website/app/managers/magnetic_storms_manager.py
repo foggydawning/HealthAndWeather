@@ -14,5 +14,8 @@ from random import randint
 
 
 class MagneticStormsManager:
+    def __init__(self):
+        self.api_key = "Hdd633EbwbQ8elJKig6Ub8AJHhXS5MYKBev6yKdS"
+
     def get_magnetic_storms(self) -> int:
         return randint(3, 6)
