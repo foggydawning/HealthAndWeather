@@ -4,12 +4,14 @@ from flask import request
 from app.weather import Weather
 from app.managers.ipdata_manager import IpdataManager
 from app.managers.openweather_manager import OpenweatherManager
+from app.models import User
 
 
 class NetworkManager:
     def __init__(self):
         self.ipdata_manager = IpdataManager()
         self.openweather_manager = OpenweatherManager()
+        self.current_user: User = flask_login.current_user
 
     def get_ip(self):
         return "178.68.70.67"
@@ -18,10 +20,13 @@ class NetworkManager:
         return request.form
 
     def get_user_id(self) -> int:
-        return flask_login.current_user.id
+        return self.current_user.id
 
     def get_user_username(self) -> str:
-        return  flask_login.current_user.username
+        return self.current_user.username
+
+    def get_user_avatar(self):
+        return self.current_user.avatar()
 
     def get_lat_and_lon(self) -> Tuple[float, float]:
         ip = self.get_ip()

@@ -10,14 +10,12 @@ class User(UserMixin, db.Model):
     email: str = db.Column(db.String(120), index=True, unique=True)
     password_hash: str = db.Column(db.String(128))
     data = db.relationship('Data', backref='user', lazy='dynamic')
-    def avatar(self, size):
+
+    def avatar(self, size: int=128):
         digest = md5(self.email.lower().encode('utf-8')).hexdigest()
         return 'https://www.gravatar.com/avatar/{}?d=identicon&s={}'.format(
             digest, size)
 
-    def __repr__(self):
-        return '<User {}>'.format(self.username)
-    
     def set_password(self, password):
         self.password_hash = generate_password_hash(password)
 

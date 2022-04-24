@@ -5,14 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5f7faae8-5094-4eb8-ac72-4d36d93a0258" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/website/migrations/versions/a725f550593e_.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/HealthAndWeather.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/HealthAndWeather.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HAWVenv/bin/activate" beforeDir="false" afterPath="$PROJECT_DIR$/HAWVenv/bin/activate" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HAWVenv/bin/pip" beforeDir="false" afterPath="$PROJECT_DIR$/HAWVenv/bin/pip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HAWVenv/bin/pip3" beforeDir="false" afterPath="$PROJECT_DIR$/HAWVenv/bin/pip3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HAWVenv/bin/pip3.10" beforeDir="false" afterPath="$PROJECT_DIR$/HAWVenv/bin/pip3.10" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HAWVenv/bin/flask" beforeDir="false" afterPath="$PROJECT_DIR$/HAWVenv/bin/flask" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HAWVenv/bin/ipdata" beforeDir="false" afterPath="$PROJECT_DIR$/HAWVenv/bin/ipdata" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HAWVenv/bin/normalizer" beforeDir="false" afterPath="$PROJECT_DIR$/HAWVenv/bin/normalizer" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HAWVenv/bin/tqdm" beforeDir="false" afterPath="$PROJECT_DIR$/HAWVenv/bin/tqdm" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/website/app.db" beforeDir="false" afterPath="$PROJECT_DIR$/website/app.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/app/managers/gaussian_NB_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/website/app/managers/gaussian_NB_manager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/app/managers/ipdata_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/website/app/managers/ipdata_manager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/app/managers/network_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/website/app/managers/network_manager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/app/managers/pandas_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/website/app/managers/pandas_manager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/website/app/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/app/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/website/app/routes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/app/templates/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/website/app/templates/main.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,6 +59,7 @@
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="DatabaseDriversLRU" value="sqlite" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -97,7 +103,8 @@
       <workItem from="1648482181202" duration="783000" />
       <workItem from="1648484260938" duration="113000" />
       <workItem from="1649691329972" duration="1113000" />
-      <workItem from="1650385820294" duration="344000" />
+      <workItem from="1650385820294" duration="589000" />
+      <workItem from="1650823103551" duration="6746000" />
     </task>
     <servers />
   </component>

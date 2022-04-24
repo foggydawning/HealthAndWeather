@@ -15,10 +15,11 @@ import time
 @app.route('/main', methods=['GET', 'POST'])
 @login_required
 def main():
+    network_manager = NetworkManager()
     if request.method == "POST":
-        user_answer = NetworkManager().get_user_answer()
-        weather = NetworkManager().get_weather()
-        user_id = NetworkManager().get_user_id()
+        user_answer = network_manager.get_user_answer()
+        weather = network_manager.get_weather()
+        user_id = network_manager.get_user_id()
         current_time = time.strftime('%A %B, %d %Y %H:%M:%S')
         DBManager().save_data (
             user_id=user_id,
@@ -28,15 +29,22 @@ def main():
         )
         flash('Информация добавлена')
         redirect(url_for('main'))
-    city = NetworkManager().get_city()
-    username = NetworkManager().get_user_username()
-    pressure: int = NetworkManager().get_weather().pressure
+    ip = request.remote_addr
+    print(ip)
+    city = network_manager.get_city()
+    username = network_manager.get_user_username()
+    avatar = network_manager.get_user_avatar()
+    pressure: int = network_manager.get_weather().pressure
 
-    pandas_manager = PandasManager()
     user_id = NetworkManager().get_user_id()
-    data = pandas_manager.get_data(user_id)
+    data = PandasManager().get_data(user_id)
     gaussian_NB_Manager = GaussianNBManager(data, pressure)
-    return render_template("main.html", city=city, username=username)
+    return render_template(
+        "main.html",
+        city=city,
+        username=username,
+        avatar=avatar
+    )
 
 @app.route('/registration', methods=['GET', 'POST'])
 def registration():

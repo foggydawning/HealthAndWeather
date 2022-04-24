@@ -77,14 +77,14 @@
                         </div>
                     </div>
                 </form>
-                <div class="leftMainBlockSubblock4">
-                    <img class="leftMainBlockSubblock4Photo" src="{{url_for('static',filename='images/GraphMock.svg') }}">
-                </div>
+{#                <div class="leftMainBlockSubblock4">#}
+{#                    <img class="leftMainBlockSubblock4Photo" src="{{url_for('static',filename='images/GraphMock.svg') }}">#}
+{#                </div>#}
             </div>
             <div class="rigthMainBlock">
                 <div class="userBlockRow1">
                     <p>{{ username }}</p>
-                    <td><img src="{{ user.avatar(128) }}"></td>
+                    <img class="userImage" src="{{avatar}}">
                 </div>
                 <div class="userBlockRow2">
                     <p> {{ city }} </p>
