@@ -1,16 +1,13 @@
 from ctypes import Array
+from typing import Optional
 
+from app.models import Predict, Weather
 from pandas.core.frame import DataFrame
 from sklearn.naive_bayes import GaussianNB
 
-from app.models import Predict, Weather
-from typing import Optional
-
 
 class GaussianNBManager:
-    def __init__(
-        self, data: DataFrame, cur_weather: Weather
-    ):
+    def __init__(self, data: DataFrame, cur_weather: Weather):
         self.data: DataFrame = data
         self.cur_weather: Weather = cur_weather
 
@@ -19,13 +16,12 @@ class GaussianNBManager:
             is_high_pressure = self.predict_is_high_pressure()
             is_head_hurts = self.predict_is_head_hurts()
             well_being = self.predict_well_being(
-                is_high_pressure=is_high_pressure,
-                is_head_hurts=is_head_hurts
+                is_high_pressure=is_high_pressure, is_head_hurts=is_head_hurts
             )
-            predict = Predict (
+            predict = Predict(
                 is_high_pressure=is_high_pressure,
                 is_head_hurts=is_head_hurts,
-                well_being=well_being
+                well_being=well_being,
             )
             return predict
         return None
@@ -70,7 +66,5 @@ class GaussianNBManager:
         labels = well_being_arr
 
         model.fit(features, labels)
-        result: int = model.predict(
-            [(is_high_pressure, is_head_hurts)]
-        ).tolist()[0]
+        result: int = model.predict([(is_high_pressure, is_head_hurts)]).tolist()[0]
         return result

@@ -1,9 +1,8 @@
 from hashlib import md5
 
+from app import db, login
 from flask_login import UserMixin
 from werkzeug.security import check_password_hash, generate_password_hash
-
-from app import db, login
 
 
 class User(UserMixin, db.Model):
@@ -39,24 +38,14 @@ class Data(db.Model):
 
 
 class Weather:
-    def __init__(
-        self,
-        pressure: float,
-        temperature: float,
-        magnetic_storms: int
-    ):
+    def __init__(self, pressure: float, temperature: float, magnetic_storms: int):
         self.pressure = pressure
         self.temperature = temperature
         self.magnetic_storms = magnetic_storms
 
 
 class Predict:
-    def __init__(
-        self,
-        is_high_pressure: int,
-        is_head_hurts: int,
-        well_being: int
-    ):
+    def __init__(self, is_high_pressure: int, is_head_hurts: int, well_being: int):
         self.is_high_pressure = is_high_pressure
         self.is_head_hurts = is_head_hurts
         self.well_being = well_being

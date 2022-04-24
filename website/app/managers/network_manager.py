@@ -1,11 +1,10 @@
 from typing import Dict, Tuple
 
 import flask_login
-from flask import request
-
 from app.managers.ipdata_manager import IpdataManager
 from app.managers.weather_manager import WeatherManager
 from app.models import User, Weather
+from flask import request
 
 
 class NetworkManager:
@@ -35,7 +34,7 @@ class NetworkManager:
 
     def get_cur_weather(self) -> Weather:
         lat, lon = self.get_lat_and_lon()
-        weather_manager = WeatherManager(lat=lat,lon=lon)
+        weather_manager = WeatherManager(lat=lat, lon=lon)
         weather = weather_manager.get_weather()
         return weather
 

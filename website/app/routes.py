@@ -1,13 +1,12 @@
 import time
 
-from flask import flash, redirect, render_template, request, url_for
-from flask_login import current_user, login_required, login_user, logout_user
-
 from app import app
 from app.forms import LoginForm, RegistrationForm
 from app.managers.db_manager import DBManager
 from app.managers.gaussian_NB_manager import GaussianNBManager
 from app.managers.network_manager import NetworkManager
+from flask import flash, redirect, render_template, request, url_for
+from flask_login import current_user, login_required, login_user, logout_user
 
 
 @app.route("/", methods=["GET", "POST"])
@@ -22,7 +21,10 @@ def main():
         user_answer = network_manager.get_user_answer()
         current_time = time.strftime("%A %B, %d %Y %H:%M:%S")
         DBManager().save_data(
-            user_id=user_id, time=current_time, user_answer=user_answer, weather=cur_weather
+            user_id=user_id,
+            time=current_time,
+            user_answer=user_answer,
+            weather=cur_weather,
         )
         flash("Информация добавлена")
         redirect(url_for("main"))

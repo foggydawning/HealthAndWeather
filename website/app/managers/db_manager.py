@@ -3,11 +3,11 @@ import sqlite3
 from sqlite3.dbapi2 import Connection
 from typing import Dict
 
+from app import db
+from app.models import Data, User, Weather
 from pandas import read_sql_query
 from pandas.core.frame import DataFrame
 
-from app import db
-from app.models import Data, User, Weather
 
 class DBManager:
     def __init__(self):
@@ -39,7 +39,7 @@ class DBManager:
             is_high_pressure=user_answer.get("radio3"),
             temperature=weather.temperature,
             pressure=weather.pressure,
-            magnetic_storms=weather.magnetic_stroms
+            magnetic_storms=weather.magnetic_stroms,
         )
         db.session.add(data)
         db.session.commit()

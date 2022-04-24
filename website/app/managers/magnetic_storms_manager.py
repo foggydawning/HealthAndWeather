@@ -12,6 +12,7 @@
 
 from random import randint
 
-class MagneticStormsManager():
+
+class MagneticStormsManager:
     def get_magnetic_storms(self) -> int:
-        return randint(3,6)
+        return randint(3, 6)

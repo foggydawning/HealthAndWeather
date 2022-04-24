@@ -1,15 +1,14 @@
-from typing import Tuple
-
-from ipdata import ipdata
+from typing import Dict, Tuple
 
 from config import Config
+from ipdata import ipdata
 
 
 class IpdataManager:
     def __init__(self):
         self.api_key = Config.IPDATA_API_KEY
 
-    def get_response(self, ip: str) -> dict[str, int] | dict[str, str | int]:
+    def get_response(self, ip: str) -> Dict[str, int] or Dict[str, str or int]:
         ip_data = ipdata.IPData(self.api_key)
         response = ip_data.lookup(ip)
         return response
