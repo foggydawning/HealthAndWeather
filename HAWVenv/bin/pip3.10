@@ -1,4 +1,4 @@
-#!/Users/foggydawning/Documents/HealthAndWeather/HAWVenv/bin/python3
+#!/Users/foggydawning/HealthAndWeather/HAWVenv/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys
