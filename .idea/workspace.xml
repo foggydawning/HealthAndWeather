@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="783ea9a9-d035-4c86-99eb-21cfdcf67677" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/website/app/static/text/string_constants.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/website/app/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/website/app/routes.py" afterDir="false" />
     </list>
@@ -67,7 +68,7 @@
       <option name="presentableId" value="Default" />
       <updated>1650833940652</updated>
       <workItem from="1650833941814" duration="128000" />
-      <workItem from="1650834074083" duration="14497000" />
+      <workItem from="1650834074083" duration="15172000" />
     </task>
     <servers />
   </component>

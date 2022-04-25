@@ -8,6 +8,7 @@ from app.forms import LoginForm, RegistrationForm
 from app.managers.db_manager import DBManager
 from app.managers.gaussian_NB_manager import GaussianNBManager
 from app.managers.network_manager import NetworkManager
+from app.static.text.string_constants import StringConstants
 
 
 @app.route("/", methods=["GET", "POST"])
@@ -19,7 +20,7 @@ def main():
     username = network_manager.get_user_username()
     avatar = network_manager.get_user_avatar()
 
-    predict_message = "К сожалению, у нас не получается составить прогноз на сегодня"
+    predict_message = StringConstants.prediction_is_impossible
 
     cur_weather = network_manager.get_cur_weather()
     if not cur_weather:
@@ -29,6 +30,7 @@ def main():
             username=username,
             avatar=avatar,
             predict_message=predict_message,
+            title=StringConstants.main_page
         )
     user_id = network_manager.get_user_id()
 
@@ -49,9 +51,9 @@ def main():
     gaussian_NB_Manager = GaussianNBManager(data=data, cur_weather=cur_weather)
     predict = gaussian_NB_Manager.get_predict()
     if not predict:
-        predict_message = "Нам нужно больше данных, чтобы делать предсказания. Отмечайте своё самочувствие на протяжении нескольких дней"
+        predict_message = StringConstants.need_more_data
     else:
-        predict_message = "Сообщение с предсказанием"
+        predict_message = StringConstants.prediction_message
         print(predict.is_high_pressure, predict.is_head_hurts, predict.well_being)
     return render_template(
         "main.html",
@@ -59,6 +61,7 @@ def main():
         username=username,
         avatar=avatar,
         predict_message=predict_message,
+        title=StringConstants.main_page
     )
 
 
@@ -69,9 +72,8 @@ def registration():
     form = RegistrationForm()
     if form.validate_on_submit():
         DBManager().save_user(form.username.data, form.email.data, form.password.data)
-        flash("Поздравляем, вы зарегестрированы!")
         return redirect(url_for("login"))
-    return render_template("registration.html", title="Регистрация", form=form)
+    return render_template("registration.html", title=StringConstants.registration, form=form)
 
 
 @app.route("/login", methods=["GET", "POST"])
@@ -83,11 +85,10 @@ def login():
         email: str = form.email.data
         user = DBManager().get_user(email)
         if user is None or not user.check_password(form.password.data):
-            flash("Неправильный логи или пароль")
             return redirect(url_for("login"))
         login_user(user)
         return redirect(url_for("main"))
-    return render_template("login.html", title="Вход", form=form)
+    return render_template("login.html", title=StringConstants.login, form=form)
 
 
 @app.route("/logout")
