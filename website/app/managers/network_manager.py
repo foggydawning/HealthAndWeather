@@ -1,11 +1,10 @@
 from typing import Dict, Optional, Tuple
 
 import flask_login
-from flask import request
-
 from app.managers.ipdata_manager import IpdataManager
 from app.managers.weather_manager import WeatherManager
 from app.models import User, Weather
+from flask import request
 
 
 class NetworkManager:

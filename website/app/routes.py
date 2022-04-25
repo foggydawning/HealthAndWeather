@@ -1,14 +1,13 @@
 import time
 
-from flask import flash, redirect, render_template, request, url_for
-from flask_login import current_user, login_required, login_user, logout_user
-
 from app import app
 from app.forms import LoginForm, RegistrationForm
 from app.managers.db_manager import DBManager
 from app.managers.gaussian_NB_manager import GaussianNBManager
 from app.managers.network_manager import NetworkManager
 from app.static.text.string_constants import StringConstants
+from flask import redirect, render_template, request, url_for
+from flask_login import current_user, login_required, login_user, logout_user
 
 
 @app.route("/", methods=["GET", "POST"])
@@ -30,13 +29,13 @@ def main():
             username=username,
             avatar=avatar,
             predict_message=predict_message,
-            title=StringConstants.main_page
+            title=StringConstants.main_page,
         )
     user_id = network_manager.get_user_id()
 
     if request.method == "POST":
         user_answer = network_manager.get_user_answer()
-        current_time = time.strftime("%A %B, %d %Y %H:%M:%S")
+        current_time = time.strftime("%d.%m.%Y %H:%M:%S")
         DBManager().save_data(
             user_id=user_id,
             time=current_time,
@@ -53,15 +52,27 @@ def main():
     if not predict:
         predict_message = StringConstants.need_more_data
     else:
-        predict_message = StringConstants.prediction_message
-        print(predict.is_high_pressure, predict.is_head_hurts, predict.well_being)
+        param_1 = StringConstants.not_increased
+        if predict.is_high_pressure == 1:
+            param_1 = StringConstants.increased
+
+        param_2 = StringConstants.not_hurts
+        if predict.is_head_hurts == 1:
+            param_2 = StringConstants.hurts
+
+        predict_message = StringConstants.prediction_message % (
+            param_1,
+            param_2,
+            predict.well_being,
+        )
+
     return render_template(
         "main.html",
         city=city,
         username=username,
         avatar=avatar,
         predict_message=predict_message,
-        title=StringConstants.main_page
+        title=StringConstants.main_page,
     )
 
 
@@ -73,7 +84,9 @@ def registration():
     if form.validate_on_submit():
         DBManager().save_user(form.username.data, form.email.data, form.password.data)
         return redirect(url_for("login"))
-    return render_template("registration.html", title=StringConstants.registration, form=form)
+    return render_template(
+        "registration.html", title=StringConstants.registration, form=form
+    )
 
 
 @app.route("/login", methods=["GET", "POST"])

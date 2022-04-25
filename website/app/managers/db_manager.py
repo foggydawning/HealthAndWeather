@@ -3,11 +3,10 @@ import sqlite3
 from sqlite3.dbapi2 import Connection
 from typing import Dict
 
-from pandas import read_sql_query
-from pandas.core.frame import DataFrame
-
 from app import db
 from app.models import Data, User, Weather
+from pandas import read_sql_query
+from pandas.core.frame import DataFrame
 
 
 class DBManager:

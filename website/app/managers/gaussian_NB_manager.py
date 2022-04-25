@@ -1,12 +1,10 @@
 from ctypes import Array
 from typing import Optional
 
+from app.models import Predict, Weather
 from numpy import ndarray
-
 from pandas.core.frame import DataFrame
 from sklearn.naive_bayes import GaussianNB
-
-from app.models import Predict, Weather
 
 
 class GaussianNBManager:
@@ -15,7 +13,7 @@ class GaussianNBManager:
         self.cur_weather: Weather = cur_weather
 
     def get_predict(self) -> Optional[Predict]:
-        if not self.data.empty:
+        if not self.data.empty and self.data.shape[0] > 7:
             is_high_pressure = self.predict_is_high_pressure()
             is_head_hurts = self.predict_is_head_hurts()
             well_being = self.predict_well_being(

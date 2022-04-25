@@ -13,7 +13,7 @@ class IpdataManager:
     ) -> (Optional[Dict[str, int]] or Optional[Dict[str, str or int]]):
         try:
             ip_data = ipdata.IPData(self.api_key)
-            response = ip_data.lookup(ip, fields=['latitude', 'longitude', 'city'])
+            response = ip_data.lookup(ip, fields=["latitude", "longitude", "city"])
             return response
         except Exception as e:
             print(f"Ошибка при попытке получить ответ IPData: {e}")
