@@ -42,8 +42,11 @@ def main():
 
         gaussian_NB_Manager = GaussianNBManager(data=data, cur_weather=cur_weather)
         predict = gaussian_NB_Manager.get_predict()
-        predict_message = "Сообщение с предсказанием"
-        print(predict.is_high_pressure, predict.is_head_hurts, predict.well_being)
+        if not predict:
+            print("Не удалось получить предсказание")
+        else:
+            predict_message = "Сообщение с предсказанием"
+            print(predict.is_high_pressure, predict.is_head_hurts, predict.well_being)
     template = render_template(
         "main.html",
         city=city,

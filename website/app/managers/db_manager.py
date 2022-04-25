@@ -15,7 +15,7 @@ class DBManager:
         self.connection: Connection = self.create_connection()
 
     def create_connection(self) -> Connection:
-        BASE_DIR: str = os.path.dirname(os.path.abspath(__file__))
+        BASE_DIR: bytes = os.path.dirname(os.path.abspath(__file__))
         db_path: bytes = os.path.join(BASE_DIR, "./../../app.db")
         connection: Connection = sqlite3.connect(db_path)
         return connection
