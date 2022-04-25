@@ -1,4 +1,4 @@
-from typing import Dict, Tuple, Optional
+from typing import Dict, Optional, Tuple
 
 from ipdata import ipdata
 
@@ -8,13 +8,12 @@ class IpdataManager:
         self.api_key = "b28c6ec534269b0b98d175759a442f2f02e709871e8cd30c288ec911"
         self.response = self.get_response(ip=ip)
 
-    def get_response(self, ip: str) -> (
-            Optional[Dict[str, int]]
-            or Optional[Dict[str, str or int]]
-    ):
+    def get_response(
+        self, ip: str
+    ) -> (Optional[Dict[str, int]] or Optional[Dict[str, str or int]]):
         try:
             ip_data = ipdata.IPData(self.api_key)
-            response = ip_data.lookup(ip)
+            response = ip_data.lookup(ip, fields=['latitude', 'longitude', 'city'])
             return response
         except Exception as e:
             print(f"Ошибка при попытке получить ответ IPData: {e}")
@@ -37,4 +36,3 @@ class IpdataManager:
         except Exception as e:
             print(f"Ошибка при попытке определения города: {e}")
             return None
-

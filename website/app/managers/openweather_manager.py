@@ -2,6 +2,7 @@ from typing import Optional
 
 import requests
 
+
 class OpenweatherManager:
     def __init__(self, lat: float, lon: float):
         self.api_key = "951d06da3f4ceccd497a3dce3e2e1400"
@@ -9,7 +10,7 @@ class OpenweatherManager:
         self.lon = lon
 
     def get_temperature(self) -> Optional[float]:
-        request_string = "http://api.openweathermap.org/data/2.5/weather?}"
+        request_string = "http://api.openweathermap.org/data/2.5/weather?"
         try:
             res = requests.get(
                 request_string,
@@ -23,7 +24,7 @@ class OpenweatherManager:
             return None
 
     def get_pressure(self) -> Optional[float]:
-        request_string = "http://api.openweathermap.org/data/2.5/weather?}"
+        request_string = "http://api.openweathermap.org/data/2.5/weather?"
         try:
             res = requests.get(
                 request_string,

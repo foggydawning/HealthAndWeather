@@ -1,9 +1,10 @@
 from ctypes import Array
 from typing import Optional
 
-from app.models import Predict, Weather
 from pandas.core.frame import DataFrame
 from sklearn.naive_bayes import GaussianNB
+
+from app.models import Predict, Weather
 
 
 class GaussianNBManager:
