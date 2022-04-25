@@ -22,39 +22,44 @@ def main():
     predict_message = "К сожалению, у нас не получается составить прогноз на сегодня"
 
     cur_weather = network_manager.get_cur_weather()
-    if cur_weather is None:
-        print("Невозможно определить текущую погоду")
+    if not cur_weather:
+        return render_template(
+            "main.html",
+            city=city,
+            username=username,
+            avatar=avatar,
+            predict_message=predict_message,
+        )
+    user_id = network_manager.get_user_id()
+
+    if request.method == "POST":
+        user_answer = network_manager.get_user_answer()
+        current_time = time.strftime("%A %B, %d %Y %H:%M:%S")
+        DBManager().save_data(
+            user_id=user_id,
+            time=current_time,
+            user_answer=user_answer,
+            weather=cur_weather,
+        )
+        redirect(url_for("main"))
+
+    user_id = network_manager.get_user_id()
+    data = DBManager().get_data(user_id)
+
+    gaussian_NB_Manager = GaussianNBManager(data=data, cur_weather=cur_weather)
+    predict = gaussian_NB_Manager.get_predict()
+    if not predict:
+        predict_message = "Нам нужно больше данных, чтобы делать предсказания. Отмечайте своё самочувствие на протяжении нескольких дней"
     else:
-        user_id = network_manager.get_user_id()
-        if request.method == "POST":
-            user_answer = network_manager.get_user_answer()
-            current_time = time.strftime("%A %B, %d %Y %H:%M:%S")
-            DBManager().save_data(
-                user_id=user_id,
-                time=current_time,
-                user_answer=user_answer,
-                weather=cur_weather,
-            )
-            redirect(url_for("main"))
-
-        user_id = NetworkManager().get_user_id()
-        data = DBManager().get_data(user_id)
-
-        gaussian_NB_Manager = GaussianNBManager(data=data, cur_weather=cur_weather)
-        predict = gaussian_NB_Manager.get_predict()
-        if not predict:
-            print("Не удалось получить предсказание")
-        else:
-            predict_message = "Сообщение с предсказанием"
-            print(predict.is_high_pressure, predict.is_head_hurts, predict.well_being)
-    template = render_template(
+        predict_message = "Сообщение с предсказанием"
+        print(predict.is_high_pressure, predict.is_head_hurts, predict.well_being)
+    return render_template(
         "main.html",
         city=city,
         username=username,
         avatar=avatar,
         predict_message=predict_message,
     )
-    return template
 
 
 @app.route("/registration", methods=["GET", "POST"])

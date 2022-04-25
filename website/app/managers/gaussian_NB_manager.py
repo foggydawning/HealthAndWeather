@@ -1,6 +1,8 @@
 from ctypes import Array
 from typing import Optional
 
+from numpy import ndarray
+
 from pandas.core.frame import DataFrame
 from sklearn.naive_bayes import GaussianNB
 
@@ -29,9 +31,9 @@ class GaussianNBManager:
 
     def predict_is_head_hurts(self) -> int:
         model = GaussianNB()
-        pressure_arr: Array = self.data["pressure"].to_numpy()
-        is_head_hurts_arr: Array = self.data["is_head_hurts"].to_numpy()
-        magnetic_storms_arr: Array = self.data["magnetic_storms"].to_numpy()
+        pressure_arr: ndarray = self.data["pressure"].to_numpy()
+        is_head_hurts_arr: ndarray = self.data["is_head_hurts"].to_numpy()
+        magnetic_storms_arr: ndarray = self.data["magnetic_storms"].to_numpy()
 
         features = list(zip(pressure_arr, magnetic_storms_arr))
         labels = is_head_hurts_arr
@@ -44,9 +46,9 @@ class GaussianNBManager:
 
     def predict_is_high_pressure(self) -> int:
         model = GaussianNB()
-        pressure_arr: Array = self.data["pressure"].to_numpy()
-        magnetic_storms_arr: Array = self.data["magnetic_storms"].to_numpy()
-        is_high_pressure_arr: Array = self.data["is_high_pressure"].to_numpy()
+        pressure_arr: ndarray = self.data["pressure"].to_numpy()
+        magnetic_storms_arr: ndarray = self.data["magnetic_storms"].to_numpy()
+        is_high_pressure_arr: ndarray = self.data["is_high_pressure"].to_numpy()
 
         features = list(zip(pressure_arr, magnetic_storms_arr))
         labels = is_high_pressure_arr
@@ -59,9 +61,9 @@ class GaussianNBManager:
 
     def predict_well_being(self, is_high_pressure: int, is_head_hurts: int) -> int:
         model = GaussianNB()
-        is_head_hurts_arr: Array = self.data["is_high_pressure"].to_numpy()
-        is_high_pressure_arr: Array = self.data["is_high_pressure"].to_numpy()
-        well_being_arr: Array = self.data["well_being"].to_numpy()
+        is_head_hurts_arr: ndarray = self.data["is_high_pressure"].to_numpy()
+        is_high_pressure_arr: ndarray = self.data["is_high_pressure"].to_numpy()
+        well_being_arr: ndarray = self.data["well_being"].to_numpy()
 
         features = list(zip(is_high_pressure_arr, is_head_hurts_arr))
         labels = well_being_arr
